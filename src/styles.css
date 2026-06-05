@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+/* Core Tailwind initialization for v4 architecture */
+@import "tailwindcss";
+
+@theme {
+  --animate-marquee: marquee 25s linear infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+/* Angular ke flexible layout ke liye patti ko dornay par majboor karne ka tarika */
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+@utility animate-land {
+  animation: landDown 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes landDown {
+  0% { transform: translateY(-70px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
