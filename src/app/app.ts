@@ -16,7 +16,7 @@ export class App {
   // ==========================================
   
   companyName = 'TAMSAL TECHNOLOGIES';
-  email = 'muradmahmood46@gmail.com';
+  email = 'tamsal.technologies@gmail.com';
   phone = '+92 334 8128646';
 
   // Sliding Patti (Marquee) Keywords
