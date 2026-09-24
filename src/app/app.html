@@ -1,10 +1,12 @@
-<!-- ==================== GLOBAL STICKY NAVIGATION BAR ==================== -->
-<nav class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-3.5" 
+<!-- ==================== GLOBAL STICKY NAVIGATION BAR (HIDE ON SCROLL DOWN / SHOW ON SCROLL UP) ==================== -->
+<nav class="fixed top-0 left-0 w-full z-50 transition-transform duration-300 ease-in-out py-3.5 md:py-5" 
      [class.glass-nav]="isScrolled" 
      [class.bg-slate-950/80]="!isScrolled"
      [class.backdrop-blur-md]="!isScrolled"
      [class.border-b]="!isScrolled"
-     [class.border-white/5]="!isScrolled">
+     [class.border-white/5]="!isScrolled"
+     [class.-translate-y-full]="isNavHidden"
+     [class.translate-y-0]="!isNavHidden">
   <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
     <!-- Brand Logo & Name -->
     <a routerLink="/" (click)="closeMobileMenu()" class="flex items-center gap-3 group">

@@ -11,6 +11,8 @@ import { RouterOutlet, RouterLink } from '@angular/router';
 })
 export class App {
   isScrolled = false;
+  isNavHidden = false;
+  lastScrollTop = 0;
   isMobileMenuOpen = false;
 
   companyName = 'TAMSAL TECHNOLOGIES';
@@ -27,6 +29,24 @@ export class App {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    this.isScrolled = window.scrollY > 50;
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
+    this.isScrolled = currentScroll > 50;
+
+    // Don't hide navbar if mobile drawer is currently open
+    if (this.isMobileMenuOpen) {
+      this.isNavHidden = false;
+      this.lastScrollTop = currentScroll;
+      return;
+    }
+
+    // Scroll Down -> Hide navbar
+    if (currentScroll > this.lastScrollTop && currentScroll > 80) {
+      this.isNavHidden = true;
+    } else {
+      // Scroll Up / Near Top -> Show navbar
+      this.isNavHidden = false;
+    }
+
+    this.lastScrollTop = Math.max(0, currentScroll);
   }
 }
