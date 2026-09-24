@@ -1,5 +1,5 @@
 <!-- ==================== HERO SECTION (4K FULL-VIEWPORT CYBER ANIMATION) ==================== -->
-<section class="relative min-h-[92vh] flex items-center bg-slate-950 text-white overflow-hidden pt-28 pb-20 bg-tech-grid">
+<section class="relative min-h-[95vh] lg:min-h-screen flex items-center bg-slate-950 text-white overflow-hidden pt-28 pb-20 md:pt-36 md:pb-28 bg-tech-grid">
   <!-- Sweeping 4K Laser Scanning Beam across entire Hero -->
   <div class="hero-scanline"></div>
 
@@ -420,109 +420,109 @@
 
 
 <!-- ==================== STRATEGIC LEADERSHIP / TEAM SECTION ==================== -->
-<section id="team" class="py-24 bg-slate-950 border-t border-white/5">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center max-w-3xl mx-auto mb-16 space-y-2">
+<section id="team" class="py-16 md:py-24 bg-slate-950 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-3xl mx-auto mb-10 md:mb-16 space-y-2">
       <span class="text-orange-500 font-bold text-xs tracking-widest uppercase bg-orange-500/10 px-4 py-1.5 rounded-full border border-orange-500/20 inline-block">
         Our Strategic Leadership
       </span>
       <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight font-display">
-        Managed by Industry Professionals
+        Managed by <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500">Industry Professionals</span>
       </h2>
-      <p class="text-slate-300 text-sm md:text-base pt-2">
+      <p class="text-slate-300 text-sm md:text-base pt-1 md:pt-2">
         Experienced engineers and visionary leaders guiding every product from concept to production.
       </p>
     </div>
     
     <!-- Top Row: Murad Mahmood (CEO) Prominently at Top on Mobile & PC -->
-    <div class="max-w-2xl mx-auto mb-8 w-full">
-      <div class="glass-card p-8 rounded-3xl border-2 border-orange-500/40 text-center group hover:border-orange-500 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(249,115,22,0.25)] hover:-translate-y-2 relative overflow-hidden flex flex-col justify-between">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-orange-500 to-amber-400"></div>
+    <div class="max-w-2xl mx-auto mb-5 sm:mb-8 w-full">
+      <div class="glass-card p-5 sm:p-8 rounded-2xl sm:rounded-3xl border-2 border-orange-500/40 text-center group hover:border-orange-500 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(249,115,22,0.25)] hover:-translate-y-1 relative overflow-hidden flex flex-col justify-between">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-28 sm:w-32 h-1 bg-gradient-to-r from-orange-500 to-amber-400"></div>
         
         <div>
           <!-- Avatar with glowing gradient ring -->
-          <div class="relative w-24 h-24 mx-auto mb-6">
+          <div class="relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto mb-3 sm:mb-5">
             <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-orange-500 to-amber-500 blur-lg opacity-40 group-hover:opacity-100 transition duration-500"></div>
-            <div class="relative w-full h-full bg-slate-950 text-orange-400 font-black text-3xl sm:text-4xl flex items-center justify-center rounded-full border-2 border-orange-500/50 group-hover:bg-gradient-to-br group-hover:from-orange-500 group-hover:to-amber-500 group-hover:text-white group-hover:border-transparent transition-all duration-500 shadow-inner group-hover:scale-105 font-display">
+            <div class="relative w-full h-full bg-slate-950 text-orange-400 font-black text-2xl sm:text-3xl md:text-4xl flex items-center justify-center rounded-full border-2 border-orange-500/50 group-hover:bg-gradient-to-br group-hover:from-orange-500 group-hover:to-amber-500 group-hover:text-white group-hover:border-transparent transition-all duration-500 shadow-inner group-hover:scale-105 font-display">
               {{ team[0].initial }}
             </div>
           </div>
 
-          <h3 class="text-2xl font-bold text-white mb-1 font-display group-hover:text-orange-400 transition-colors duration-300">
+          <h3 class="text-lg sm:text-2xl font-bold text-white mb-0.5 sm:mb-1 font-display group-hover:text-orange-400 transition-colors duration-300">
             {{ team[0].name }}
           </h3>
-          <div class="inline-block bg-orange-500/15 border border-orange-500/30 text-orange-400 font-bold text-xs tracking-wider uppercase px-4 py-1.5 rounded-full mb-4 font-mono">
+          <div class="inline-block bg-orange-500/15 border border-orange-500/30 text-orange-400 font-bold text-[10px] sm:text-xs tracking-wider uppercase px-3 py-1 rounded-full mb-2.5 sm:mb-4 font-mono">
             {{ team[0].role }}
           </div>
-          <p class="text-slate-300 text-sm md:text-base leading-relaxed px-4 font-normal">
+          <p class="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed px-2 sm:px-4 font-normal">
             {{ team[0].desc }}
           </p>
         </div>
 
-        <div class="mt-6 pt-4 border-t border-white/10 flex justify-center items-center gap-2 text-xs text-orange-400 font-semibold font-mono">
+        <div class="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-white/10 flex justify-center items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs text-orange-400 font-semibold font-mono">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
           <span>Chief Executive Officer • Strategic Leadership</span>
         </div>
       </div>
     </div>
 
-    <!-- Bottom Row: 2 Key Leaders (Ibtisam Ali & Saad Munir) directly underneath -->
-    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto w-full">
+    <!-- Bottom Row: Ibtisam Ali & Saad Munir in 1 Single Row on Both Mobile & PC (grid-cols-2) -->
+    <div class="grid grid-cols-2 gap-3 sm:gap-6 md:gap-8 max-w-4xl mx-auto w-full">
       <!-- Member 2: Ibtisam Ali -->
-      <div class="glass-card p-8 rounded-3xl border border-white/10 text-center group hover:border-orange-500/40 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden flex flex-col justify-between">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-0.5 bg-orange-500/0 group-hover:w-full group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:to-amber-400 transition-all duration-500"></div>
+      <div class="glass-card p-3.5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-white/10 text-center group hover:border-orange-500/40 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 relative overflow-hidden flex flex-col justify-between">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-16 sm:w-24 h-0.5 bg-orange-500/0 group-hover:w-full group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:to-amber-400 transition-all duration-500"></div>
         
         <div>
-          <div class="relative w-24 h-24 mx-auto mb-6">
+          <div class="relative w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 mx-auto mb-2 sm:mb-4">
             <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-orange-500 to-amber-500 blur-md opacity-25 group-hover:opacity-80 transition duration-500"></div>
-            <div class="relative w-full h-full bg-slate-950 text-orange-400 font-black text-3xl flex items-center justify-center rounded-full border border-white/10 group-hover:bg-gradient-to-br group-hover:from-orange-500 group-hover:to-amber-500 group-hover:text-white group-hover:border-transparent transition-all duration-500 shadow-inner group-hover:scale-105 font-display">
+            <div class="relative w-full h-full bg-slate-950 text-orange-400 font-black text-xl sm:text-2xl md:text-3xl flex items-center justify-center rounded-full border border-white/10 group-hover:bg-gradient-to-br group-hover:from-orange-500 group-hover:to-amber-500 group-hover:text-white group-hover:border-transparent transition-all duration-500 shadow-inner group-hover:scale-105 font-display">
               {{ team[1].initial }}
             </div>
           </div>
 
-          <h3 class="text-xl font-bold text-white mb-1 font-display group-hover:text-orange-400 transition-colors duration-300">
+          <h3 class="text-xs sm:text-base md:text-xl font-bold text-white mb-0.5 font-display group-hover:text-orange-400 transition-colors duration-300">
             {{ team[1].name }}
           </h3>
-          <p class="text-orange-400 font-bold text-xs tracking-wider uppercase mb-4 font-mono">
+          <p class="text-orange-400 font-bold text-[9px] sm:text-xs tracking-wider uppercase mb-2 sm:mb-3 font-mono">
             {{ team[1].role }}
           </p>
-          <p class="text-slate-300 text-sm leading-relaxed px-2 font-normal">
+          <p class="text-slate-300 text-[10px] sm:text-xs md:text-sm leading-relaxed px-0.5 sm:px-2 font-normal line-clamp-3 sm:line-clamp-none">
             {{ team[1].desc }}
           </p>
         </div>
 
-        <div class="mt-6 pt-4 border-t border-white/10 flex justify-center items-center gap-2 text-xs text-slate-400 font-semibold">
+        <div class="mt-3 sm:mt-5 pt-2.5 sm:pt-3.5 border-t border-white/10 flex justify-center items-center gap-1 sm:gap-2 text-[9px] sm:text-xs text-slate-400 font-semibold">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-          <span>Technical Architecture Lead</span>
+          <span>Technical Architecture</span>
         </div>
       </div>
 
       <!-- Member 3: Saad Munir -->
-      <div class="glass-card p-8 rounded-3xl border border-white/10 text-center group hover:border-orange-500/40 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden flex flex-col justify-between">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-0.5 bg-orange-500/0 group-hover:w-full group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:to-amber-400 transition-all duration-500"></div>
+      <div class="glass-card p-3.5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-white/10 text-center group hover:border-orange-500/40 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 relative overflow-hidden flex flex-col justify-between">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-16 sm:w-24 h-0.5 bg-orange-500/0 group-hover:w-full group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:to-amber-400 transition-all duration-500"></div>
         
         <div>
-          <div class="relative w-24 h-24 mx-auto mb-6">
+          <div class="relative w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 mx-auto mb-2 sm:mb-4">
             <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-orange-500 to-amber-500 blur-md opacity-25 group-hover:opacity-80 transition duration-500"></div>
-            <div class="relative w-full h-full bg-slate-950 text-orange-400 font-black text-3xl flex items-center justify-center rounded-full border border-white/10 group-hover:bg-gradient-to-br group-hover:from-orange-500 group-hover:to-amber-500 group-hover:text-white group-hover:border-transparent transition-all duration-500 shadow-inner group-hover:scale-105 font-display">
+            <div class="relative w-full h-full bg-slate-950 text-orange-400 font-black text-xl sm:text-2xl md:text-3xl flex items-center justify-center rounded-full border border-white/10 group-hover:bg-gradient-to-br group-hover:from-orange-500 group-hover:to-amber-500 group-hover:text-white group-hover:border-transparent transition-all duration-500 shadow-inner group-hover:scale-105 font-display">
               {{ team[2].initial }}
             </div>
           </div>
 
-          <h3 class="text-xl font-bold text-white mb-1 font-display group-hover:text-orange-400 transition-colors duration-300">
+          <h3 class="text-xs sm:text-base md:text-xl font-bold text-white mb-0.5 font-display group-hover:text-orange-400 transition-colors duration-300">
             {{ team[2].name }}
           </h3>
-          <p class="text-orange-400 font-bold text-xs tracking-wider uppercase mb-4 font-mono">
+          <p class="text-orange-400 font-bold text-[9px] sm:text-xs tracking-wider uppercase mb-2 sm:mb-3 font-mono">
             {{ team[2].role }}
           </p>
-          <p class="text-slate-300 text-sm leading-relaxed px-2 font-normal">
+          <p class="text-slate-300 text-[10px] sm:text-xs md:text-sm leading-relaxed px-0.5 sm:px-2 font-normal line-clamp-3 sm:line-clamp-none">
             {{ team[2].desc }}
           </p>
         </div>
 
-        <div class="mt-6 pt-4 border-t border-white/10 flex justify-center items-center gap-2 text-xs text-slate-400 font-semibold">
+        <div class="mt-3 sm:mt-5 pt-2.5 sm:pt-3.5 border-t border-white/10 flex justify-center items-center gap-1 sm:gap-2 text-[9px] sm:text-xs text-slate-400 font-semibold">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-          <span>Core Development Lead</span>
+          <span>Core Development</span>
         </div>
       </div>
     </div>
