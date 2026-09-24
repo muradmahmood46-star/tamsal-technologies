@@ -1,63 +1,63 @@
-<div class="min-h-screen bg-slate-950 text-white pt-28 pb-24 relative overflow-hidden bg-tech-grid">
+<div class="min-h-screen bg-slate-950 text-white pt-20 pb-14 relative overflow-hidden bg-tech-grid">
   <!-- Glowing Background Orbs -->
   <div class="absolute top-20 right-1/4 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[160px] pointer-events-none animate-pulse-glow"></div>
   <div class="absolute bottom-1/4 left-10 w-[450px] h-[450px] bg-amber-400/10 rounded-full blur-[160px] pointer-events-none"></div>
   <div class="absolute inset-0 bg-radial-vignette pointer-events-none"></div>
 
-  <div class="max-w-7xl mx-auto px-6 relative z-10">
+  <div class="max-w-[90rem] mx-auto px-4 sm:px-6 relative z-10">
     <!-- Top Breadcrumb & Back Button -->
-    <div class="mb-10 flex items-center justify-between">
-      <a routerLink="/" class="inline-flex items-center gap-2 text-xs font-bold text-slate-300 hover:text-white bg-slate-900/80 hover:bg-slate-800 border border-white/10 px-4 py-2.5 rounded-xl transition-all duration-300 shadow-sm group">
+    <div class="mb-6 flex items-center justify-between">
+      <a routerLink="/" class="inline-flex items-center gap-2 text-xs font-bold text-slate-300 hover:text-white bg-slate-900/80 hover:bg-slate-800 border border-white/10 px-3 py-2 rounded-xl transition-all duration-300 shadow-sm group">
         <span class="transform group-hover:-translate-x-1 transition-transform text-orange-400">←</span>
         <span>Back to Home</span>
       </a>
-      <span class="text-xs font-mono text-orange-400 font-semibold bg-orange-500/10 border border-orange-500/20 px-3 py-1 rounded-full shadow-2xs">
+      <span class="text-[10px] sm:text-xs font-mono text-orange-400 font-semibold bg-orange-500/10 border border-orange-500/20 px-2.5 py-1 rounded-full shadow-2xs">
         ● PRODUCT CATALOG 2026
       </span>
     </div>
 
     <!-- Header -->
-    <div class="text-center max-w-4xl mx-auto mb-20 space-y-4">
+    <div class="text-center max-w-4xl mx-auto mb-12 space-y-3">
       <div class="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 text-orange-400 font-bold tracking-wider text-xs uppercase px-4 py-1.5 rounded-full shadow-2xs">
         Our Products &amp; Pricing
       </div>
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tight font-display">
+      <h1 class="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight font-display">
         Solutions Built to <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-amber-400">Scale With Your Business</span>
       </h1>
-      <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-normal">
+      <p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-normal">
         From fast-launch business websites to intelligent POS systems and full-scale enterprise ERP platforms — transparent estimations tailored to your goals.
       </p>
     </div>
 
     <!-- 3 Step Strategy Roadmap Strip -->
-    <div class="grid md:grid-cols-3 gap-6 mb-16">
-      <div *ngFor="let step of roadmapSteps" class="bg-slate-900/60 backdrop-blur-md p-6 rounded-2xl border border-white/5 relative overflow-hidden group hover:border-orange-500/30 transition-all duration-300 shadow-sm hover:shadow-md">
-        <div class="flex items-center gap-3 mb-3">
-          <span class="text-xs font-mono font-bold text-orange-400 bg-orange-500/10 border border-orange-500/20 px-2.5 py-1 rounded-md">
+    <div class="grid grid-cols-3 gap-3 sm:gap-5 mb-10">
+      <div *ngFor="let step of roadmapSteps" class="bg-slate-900/60 backdrop-blur-md p-3 sm:p-5 rounded-xl sm:rounded-2xl border border-white/5 relative overflow-hidden group hover:border-orange-500/30 transition-all duration-300 shadow-sm hover:shadow-md">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-3 mb-2">
+          <span class="text-[10px] sm:text-xs font-mono font-bold text-orange-400 bg-orange-500/10 border border-orange-500/20 px-2 py-0.5 rounded-md">
             STAGE {{ step.step }}
           </span>
-          <span class="text-xs font-semibold text-slate-400">{{ step.subtitle }}</span>
+          <span class="text-[10px] sm:text-xs font-semibold text-slate-400 hidden sm:inline">{{ step.subtitle }}</span>
         </div>
-        <h3 class="text-lg font-bold text-white font-display mb-1 group-hover:text-orange-400 transition-colors">
+        <h3 class="text-xs sm:text-base font-bold text-white font-display mb-0.5 group-hover:text-orange-400 transition-colors line-clamp-1">
           {{ step.title }}
         </h3>
-        <p class="text-xs text-slate-400 leading-relaxed font-normal">
+        <p class="text-[10px] sm:text-xs text-slate-400 leading-relaxed font-normal line-clamp-2 sm:line-clamp-none">
           {{ step.desc }}
         </p>
       </div>
     </div>
 
     <!-- 3 Pricing Cards Grid -->
-    <div class="grid md:grid-cols-3 gap-8 items-stretch pt-4">
-      <div *ngFor="let prod of products" 
-           class="relative rounded-3xl p-8 flex flex-col justify-between transition-all duration-500 group overflow-hidden"
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 items-stretch pt-2">
+      <div *ngFor="let prod of products; let i = index" 
+           class="relative rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex flex-col justify-between transition-all duration-500 group overflow-hidden"
            [ngClass]="prod.popular ? 
-             'bg-gradient-to-b from-slate-900 to-slate-950 text-white border-2 border-orange-500 shadow-[0_20px_50px_rgba(249,115,22,0.25)] md:-translate-y-3 hover:-translate-y-4 hover:shadow-[0_25px_60px_rgba(249,115,22,0.35)]' : 
-             'bg-slate-900/70 backdrop-blur-md text-white border border-white/10 hover:border-orange-500/40 hover:shadow-[0_20px_40px_rgba(249,115,22,0.12)] hover:-translate-y-2 shadow-sm'">
+             'bg-gradient-to-b from-slate-900 to-slate-950 text-white border-2 border-orange-500 shadow-[0_20px_50px_rgba(249,115,22,0.25)] md:-translate-y-2 hover:-translate-y-3 hover:shadow-[0_25px_60px_rgba(249,115,22,0.35)] col-span-2 md:col-span-1' : 
+             'bg-slate-900/70 backdrop-blur-md text-white border border-white/10 hover:border-orange-500/40 hover:shadow-[0_20px_40px_rgba(249,115,22,0.12)] hover:-translate-y-1 shadow-sm'">
         
         <!-- Most Popular Badge -->
         <div *ngIf="prod.popular" class="absolute -top-px left-1/2 -translate-x-1/2">
-          <span class="bg-gradient-to-r from-orange-500 to-amber-500 text-white text-[11px] font-black uppercase tracking-wider px-4 py-1.5 rounded-b-xl shadow-md shadow-orange-500/30 inline-flex items-center gap-1.5">
+          <span class="bg-gradient-to-r from-orange-500 to-amber-500 text-white text-[10px] sm:text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-b-xl shadow-md shadow-orange-500/30 inline-flex items-center gap-1">
             ★ Most Popular
           </span>
         </div>
@@ -66,14 +66,14 @@
         <div class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(249,115,22,0.15),transparent_65%)] transition-opacity duration-500 pointer-events-none"></div>
 
         <!-- Card Body -->
-        <div class="relative z-10 space-y-5">
+        <div class="relative z-10 space-y-3 sm:space-y-4">
           <!-- Icon & Timeline Row -->
           <div class="flex items-center justify-between">
-            <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl shadow-inner group-hover:scale-110 transition-transform duration-500"
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl flex items-center justify-center text-2xl sm:text-3xl shadow-inner group-hover:scale-110 transition-transform duration-500"
                  [ngClass]="prod.popular ? 'bg-slate-950/90 border border-white/10' : 'bg-slate-800/80 border border-white/10 text-orange-400'">
               {{ prod.icon }}
             </div>
-            <span class="text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1.5 font-mono"
+            <span class="text-[10px] sm:text-xs font-semibold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full flex items-center gap-1 font-mono"
                   [ngClass]="prod.popular ? 'text-orange-400 bg-orange-500/10 border border-orange-500/20' : 'text-orange-400 bg-orange-500/10 border border-orange-500/20'">
               <span>⏱</span> {{ prod.timeline }}
             </span>
@@ -81,46 +81,45 @@
 
           <!-- Title & Price -->
           <div>
-            <div class="text-xs font-mono uppercase tracking-widest mb-1 font-semibold"
-                 [ngClass]="prod.popular ? 'text-slate-400' : 'text-slate-400'">{{ prod.tier }}</div>
-            <h3 class="text-2xl font-bold transition-colors duration-300 font-display"
+            <div class="text-[10px] sm:text-xs font-mono uppercase tracking-widest mb-0.5 font-semibold text-slate-400">{{ prod.tier }}</div>
+            <h3 class="text-sm sm:text-xl font-bold transition-colors duration-300 font-display"
                 [ngClass]="prod.popular ? 'text-white group-hover:text-orange-400' : 'text-white group-hover:text-orange-400'">
               {{ prod.title }}
             </h3>
-            <div class="mt-2 text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400 font-display">
+            <div class="mt-1 text-lg sm:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400 font-display">
               {{ prod.price }}
             </div>
           </div>
 
           <!-- Description -->
-          <p class="text-sm leading-relaxed min-h-[4rem] transition-colors duration-300 font-normal"
+          <p class="text-xs sm:text-sm leading-relaxed transition-colors duration-300 font-normal line-clamp-2 sm:line-clamp-none"
              [ngClass]="prod.popular ? 'text-slate-300 group-hover:text-slate-200' : 'text-slate-400 group-hover:text-slate-300'">
             {{ prod.desc }}
           </p>
 
-          <div class="w-full h-px my-4"
+          <div class="w-full h-px my-2"
                [ngClass]="prod.popular ? 'bg-white/10' : 'bg-white/5'"></div>
 
           <!-- Feature List -->
-          <ul class="space-y-3 pb-6">
-            <li *ngFor="let feat of prod.features" class="flex items-start gap-3 text-sm"
+          <ul class="space-y-2 pb-3">
+            <li *ngFor="let feat of prod.features" class="flex items-start gap-2 text-xs sm:text-sm"
                 [ngClass]="prod.popular ? 'text-slate-200' : 'text-slate-300'">
-              <span class="w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5"
+              <span class="w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center text-[10px] sm:text-xs font-bold shrink-0 mt-0.5"
                     [ngClass]="prod.popular ? 'bg-orange-500/10 border border-orange-500/30 text-orange-400' : 'bg-orange-500/10 border border-orange-500/20 text-orange-400'">
                 ✓
               </span>
-              <span class="leading-tight">{{ feat }}</span>
+              <span class="leading-tight line-clamp-1 sm:line-clamp-none">{{ feat }}</span>
             </li>
           </ul>
         </div>
 
         <!-- Bottom CTA Button -->
-        <div class="relative z-10 pt-4">
+        <div class="relative z-10 pt-2">
           <a routerLink="/" fragment="contact" 
              [ngClass]="prod.popular ? 
                'bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white shadow-lg shadow-orange-500/25' : 
                'bg-slate-800/80 hover:bg-orange-500 border border-white/10 hover:border-orange-500 text-slate-200 hover:text-white hover:shadow-lg hover:shadow-orange-500/20'"
-             class="w-full py-3.5 px-6 rounded-xl font-bold text-center block transition-all duration-300 hover:scale-[1.02] active:scale-95 text-sm uppercase tracking-wider font-display">
+             class="w-full py-2.5 sm:py-3 px-4 rounded-xl font-bold text-center block transition-all duration-300 hover:scale-[1.02] active:scale-95 text-xs sm:text-sm uppercase tracking-wider font-display">
             Get a Quote
           </a>
         </div>
@@ -131,24 +130,24 @@
     </div>
 
     <!-- Small Muted Disclaimer Note -->
-    <div class="mt-12 text-center max-w-2xl mx-auto">
+    <div class="mt-8 text-center max-w-2xl mx-auto">
       <p class="text-xs text-slate-500 leading-relaxed font-normal">
         * Prices are approximate starting estimates and may vary based on project scope, features, and client-specific customizations. Contact us for an accurate quotation.
       </p>
     </div>
 
     <!-- Direct Custom Quotation Box -->
-    <div class="mt-16 p-8 md:p-10 bg-slate-900/80 backdrop-blur-xl rounded-3xl border border-white/10 text-center relative overflow-hidden shadow-2xl">
-      <div class="relative z-10 max-w-2xl mx-auto space-y-4">
-        <h3 class="text-2xl md:text-3xl font-bold text-white font-display">Need a Tailored System or Custom Scope?</h3>
-        <p class="text-slate-400 text-sm leading-relaxed font-normal">
+    <div class="mt-10 p-5 sm:p-8 bg-slate-900/80 backdrop-blur-xl rounded-2xl border border-white/10 text-center relative overflow-hidden shadow-2xl">
+      <div class="relative z-10 max-w-2xl mx-auto space-y-3">
+        <h3 class="text-lg sm:text-2xl font-bold text-white font-display">Need a Tailored System or Custom Scope?</h3>
+        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed font-normal">
           We build custom workflows, bespoke integrations, and tailored business platforms. Talk to our technical leadership team for a fast, obligation-free consultation.
         </p>
-        <div class="pt-2 flex flex-wrap justify-center gap-4">
-          <a [href]="'tel:' + phone" class="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-7 py-3.5 rounded-xl text-xs font-bold transition-all duration-300 shadow-lg shadow-orange-500/25 font-display uppercase tracking-wider">
+        <div class="pt-1 flex flex-wrap justify-center gap-3">
+          <a [href]="'tel:' + phone" class="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-5 py-3 rounded-xl text-xs font-bold transition-all duration-300 shadow-lg shadow-orange-500/25 font-display uppercase tracking-wider">
             Call Now: {{ phone }}
           </a>
-          <a [href]="'https://wa.me/' + whatsapp" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-white/10 px-7 py-3.5 rounded-xl text-xs font-bold transition-all duration-300 font-display uppercase tracking-wider flex items-center gap-2">
+          <a [href]="'https://wa.me/' + whatsapp" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-white/10 px-5 py-3 rounded-xl text-xs font-bold transition-all duration-300 font-display uppercase tracking-wider flex items-center gap-2">
             <span>💬</span> WhatsApp Us
           </a>
         </div>
