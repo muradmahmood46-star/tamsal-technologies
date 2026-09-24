@@ -1,27 +1,224 @@
-/* Core Tailwind initialization for v4 architecture */
-@import "tailwindcss";
+/* Base Typography */
+html {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  scroll-behavior: smooth;
+}
 
-@theme {
-  --animate-marquee: marquee 25s linear infinite;
+h1, h2, h3, h4, .font-display {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+}
 
-  @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f97316;
+}
+
+/* 4K Cinematic & Futuristic Keyframe Animations */
+@keyframes marquee-forced {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-16px) rotate(1.5deg); }
+}
+
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(16px) rotate(-1.5deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.3; transform: scale(1); filter: blur(120px); }
+  50% { opacity: 0.7; transform: scale(1.18); filter: blur(90px); }
+}
+
+@keyframes laser-scan {
+  0% { top: -20%; opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { top: 120%; opacity: 0; }
+}
+
+@keyframes radar-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes border-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes data-stream {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+@keyframes holographic-flicker {
+  0%, 100% { opacity: 0.95; }
+  92% { opacity: 0.95; }
+  93% { opacity: 0.7; }
+  94% { opacity: 0.95; }
+  96% { opacity: 0.8; }
+  97% { opacity: 0.95; }
+}
+
+/* Helper Animation Classes */
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 8s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 6s ease-in-out infinite;
+}
+
+.animate-radar-spin {
+  animation: radar-spin 12s linear infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 24s linear infinite;
+}
+
+.animate-laser {
+  animation: laser-scan 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-hologram {
+  animation: holographic-flicker 8s infinite;
+}
+
+.marquee-track {
+  display: flex !important;
+  width: max-content !important;
+  animation: marquee-forced 32s linear infinite !important;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Glassmorphism Styles (Ultra-Premium Dark Cyber) */
+.glass-nav {
+  background: rgba(3, 7, 18, 0.88) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+}
+
+.glass-card {
+  background: rgba(15, 23, 42, 0.7) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(249, 115, 22, 0.5) !important;
+  background: rgba(15, 23, 42, 0.9) !important;
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px -12px rgba(249, 115, 22, 0.25);
+}
+
+/* 3D Isometric Card Container */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Laser Scanning Line Overlay */
+.scanline-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #f97316, #fbbf24, #f97316, transparent);
+  box-shadow: 0 0 15px #f97316, 0 0 35px #fbbf24;
+  pointer-events: none;
+  animation: laser-scan 5s ease-in-out infinite;
+}
+
+/* Full Viewport Laser Sweeper */
+.hero-scanline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.8), rgba(251, 191, 36, 1), rgba(249, 115, 22, 0.8), transparent);
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.8), 0 0 50px rgba(251, 191, 36, 0.6);
+  pointer-events: none;
+  animation: laser-scan 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Background Grids & Dots for Dark Cyber Theme */
+.bg-tech-grid {
+  background-size: 44px 44px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+.bg-radial-vignette {
+  background: radial-gradient(circle at 50% 20%, rgba(249, 115, 22, 0.16) 0%, rgba(3, 7, 18, 0) 70%);
+}
+
+/* Glowing Conic Border Wrapper */
+.conic-border-glow {
+  position: relative;
+}
+
+.conic-border-glow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(from 0deg at 50% 50%, #f97316, #fbbf24, #ec4899, #38bdf8, #f97316);
+  z-index: -1;
+  opacity: 0.35;
+  filter: blur(8px);
+  animation: border-spin 10s linear infinite;
+  transition: opacity 0.5s ease;
+}
+
+.conic-border-glow:hover::before {
+  opacity: 0.8;
+  filter: blur(12px);
+}
+
+/* Accessibility: Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
-}
-
-/* Angular ke flexible layout ke liye patti ko dornay par majboor karne ka tarika */
-.animate-marquee {
-  display: flex;
-  width: max-content;
-  animation: marquee 25s linear infinite;
-}
-
-@utility animate-land {
-  animation: landDown 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-}
-
-@keyframes landDown {
-  0% { transform: translateY(-70px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
 }

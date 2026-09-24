@@ -1,14 +1,50 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
-  <title>Tamsal Technologies</title>
+  <title>Tamsal Technologies — Scalable Software, POS & ERP Solutions</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <meta name="description" content="Tamsal Technologies delivers enterprise-grade software engineering, modern business websites, retail POS systems, and custom ERP solutions.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            display: ['"Outfit"', '"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace']
+          },
+          colors: {
+            brand: {
+              50: '#fff7ed',
+              100: '#ffedd5',
+              200: '#fed7aa',
+              300: '#fdba74',
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c',
+              700: '#c2410c',
+              800: '#9a3412',
+              900: '#7c2d12',
+            }
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body class="bg-slate-950 text-white">
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-orange-500 selection:text-white overflow-x-hidden font-sans">
   <app-root></app-root>
 </body>
 </html>

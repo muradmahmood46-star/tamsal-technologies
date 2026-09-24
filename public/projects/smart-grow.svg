@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="sg-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050e11"/>
+      <stop offset="60%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#141c10"/>
+    </linearGradient>
+    <linearGradient id="sg-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="sg-emerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#sg-bg)"/>
+
+  <!-- Grid -->
+  <g stroke="#ffffff" stroke-width="1" opacity="0.06">
+    <line x1="0" y1="125" x2="800" y2="125"/>
+    <line x1="0" y1="250" x2="800" y2="250"/>
+    <line x1="0" y1="375" x2="800" y2="375"/>
+    <line x1="160" y1="0" x2="160" y2="500"/>
+    <line x1="320" y1="0" x2="320" y2="500"/>
+    <line x1="480" y1="0" x2="480" y2="500"/>
+    <line x1="640" y1="0" x2="640" y2="500"/>
+  </g>
+
+  <!-- Ambient Glow -->
+  <circle cx="260" cy="220" r="160" fill="#f59e0b" opacity="0.14"/>
+  <circle cx="580" cy="240" r="160" fill="#10b981" opacity="0.13"/>
+
+  <!-- Left Earning & Tasks Dashboard -->
+  <rect x="80" y="80" width="380" height="260" rx="20" fill="#0b0f19" stroke="url(#sg-gold)" stroke-width="1.5"/>
+  
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="110" y="125" fill="#f8fafc" font-size="16" font-weight="bold">Paid-To-Click (PTC) Tasks</text>
+    <rect x="340" y="108" width="105" height="24" rx="6" fill="#f59e0b" opacity="0.15"/>
+    <text x="392" y="124" fill="#fbbf24" font-size="11" font-weight="bold" text-anchor="middle">Instant Payout</text>
+
+    <!-- Task 1 -->
+    <g transform="translate(110, 150)">
+      <rect x="0" y="0" width="320" height="42" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <circle cx="22" cy="21" r="10" fill="#10b981"/>
+      <path d="M 18,21 L 21,24 L 27,17" fill="none" stroke="#ffffff" stroke-width="2"/>
+      <text x="44" y="25" fill="#e2e8f0" font-size="12">Sponsored Ad View Completed</text>
+      <text x="300" y="25" fill="#fbbf24" font-size="12" font-weight="bold" text-anchor="end">+150 PTS</text>
+    </g>
+
+    <!-- Task 2 -->
+    <g transform="translate(110, 202)">
+      <rect x="0" y="0" width="320" height="42" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+      <circle cx="22" cy="21" r="10" fill="#10b981"/>
+      <path d="M 18,21 L 21,24 L 27,17" fill="none" stroke="#ffffff" stroke-width="2"/>
+      <text x="44" y="25" fill="#e2e8f0" font-size="12">Daily Click Reward Multiplier</text>
+      <text x="300" y="25" fill="#fbbf24" font-size="12" font-weight="bold" text-anchor="end">+300 PTS</text>
+    </g>
+
+    <!-- Task 3 -->
+    <g transform="translate(110, 254)">
+      <rect x="0" y="0" width="320" height="42" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <circle cx="22" cy="21" r="10" fill="#334155"/>
+      <text x="22" y="25" fill="#94a3b8" font-size="11" text-anchor="middle">...</text>
+      <text x="44" y="25" fill="#94a3b8" font-size="12">Community Milestone Task</text>
+      <text x="300" y="25" fill="#94a3b8" font-size="12" font-weight="bold" text-anchor="end">+500 PTS</text>
+    </g>
+  </g>
+
+  <!-- Right Floating 3D Coin & Payout Card -->
+  <g transform="translate(490, 80)" font-family="Arial, Helvetica, sans-serif">
+    <rect x="0" y="0" width="230" height="260" rx="20" fill="#0b0f19" stroke="#334155" stroke-width="1"/>
+    
+    <!-- Vector Coin Graphic -->
+    <circle cx="115" cy="85" r="48" fill="url(#sg-gold)"/>
+    <circle cx="115" cy="85" r="40" fill="#d97706"/>
+    <circle cx="115" cy="85" r="36" fill="url(#sg-gold)"/>
+    <text x="115" y="100" fill="#78350f" font-size="44" font-weight="bold" text-anchor="middle">$</text>
+
+    <text x="115" y="165" fill="#f8fafc" font-size="14" font-weight="bold" text-anchor="middle">Accumulated Balance</text>
+    <text x="115" y="195" fill="#34d399" font-size="22" font-weight="bold" text-anchor="middle">$1,248.50</text>
+    
+    <rect x="35" y="215" width="160" height="26" rx="6" fill="#10b981" opacity="0.2"/>
+    <text x="115" y="232" fill="#34d399" font-size="11" font-weight="bold" text-anchor="middle">Payout Processed</text>
+  </g>
+
+  <!-- Bottom Badges -->
+  <g font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#f1f5f9">
+    <rect x="80" y="380" width="190" height="46" rx="12" fill="#0b0f19" stroke="#334155" stroke-width="1.5"/>
+    <circle cx="106" cy="403" r="10" fill="#fbbf24" opacity="0.2"/>
+    <circle cx="106" cy="403" r="5" fill="#fbbf24"/>
+    <text x="126" y="408">Click-To-Earn</text>
+
+    <rect x="295" y="380" width="210" height="46" rx="12" fill="#0b0f19" stroke="#f59e0b" stroke-width="1.5"/>
+    <circle cx="321" cy="403" r="10" fill="#10b981" opacity="0.2"/>
+    <circle cx="321" cy="403" r="5" fill="#10b981"/>
+    <text x="341" y="408">Automated Payouts</text>
+
+    <rect x="530" y="380" width="190" height="46" rx="12" fill="#0b0f19" stroke="#334155" stroke-width="1.5"/>
+    <circle cx="556" cy="403" r="10" fill="#38bdf8" opacity="0.2"/>
+    <circle cx="556" cy="403" r="5" fill="#38bdf8"/>
+    <text x="576" y="408">Anti-Fraud Engine</text>
+  </g>
+</svg>

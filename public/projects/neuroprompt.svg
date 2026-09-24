@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="np-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050814"/>
+      <stop offset="60%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e1329"/>
+    </linearGradient>
+    <linearGradient id="np-orange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+    <linearGradient id="np-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="np-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#np-bg)"/>
+
+  <!-- Grid Pattern -->
+  <g stroke="#ffffff" stroke-width="1" opacity="0.06">
+    <line x1="0" y1="125" x2="800" y2="125"/>
+    <line x1="0" y1="250" x2="800" y2="250"/>
+    <line x1="0" y1="375" x2="800" y2="375"/>
+    <line x1="160" y1="0" x2="160" y2="500"/>
+    <line x1="320" y1="0" x2="320" y2="500"/>
+    <line x1="480" y1="0" x2="480" y2="500"/>
+    <line x1="640" y1="0" x2="640" y2="500"/>
+  </g>
+
+  <!-- Ambient Glow -->
+  <circle cx="280" cy="220" r="160" fill="#f97316" opacity="0.15"/>
+  <circle cx="560" cy="280" r="150" fill="#818cf8" opacity="0.14"/>
+
+  <!-- Neural Network Constellation Lines -->
+  <g stroke="url(#np-orange)" stroke-width="2" opacity="0.45" fill="none">
+    <path d="M 80,220 L 180,140 L 320,180 L 460,120 L 620,170 L 720,130"/>
+    <path d="M 80,320 L 200,360 L 340,300 L 480,370 L 640,320 L 730,340"/>
+    <path d="M 180,140 L 200,360"/>
+    <path d="M 320,180 L 340,300"/>
+    <path d="M 460,120 L 480,370"/>
+    <path d="M 620,170 L 640,320"/>
+  </g>
+
+  <!-- Neural Nodes -->
+  <g fill="#f97316">
+    <circle cx="180" cy="140" r="6"/>
+    <circle cx="320" cy="180" r="8"/>
+    <circle cx="460" cy="120" r="7"/>
+    <circle cx="620" cy="170" r="6"/>
+    <circle cx="200" cy="360" r="7"/>
+    <circle cx="340" cy="300" r="9"/>
+    <circle cx="480" cy="370" r="8"/>
+    <circle cx="640" cy="320" r="6"/>
+  </g>
+
+  <!-- Center Holographic AI Video Player -->
+  <rect x="200" y="85" width="400" height="250" rx="20" fill="#0b0f19" stroke="url(#np-orange)" stroke-width="2"/>
+  
+  <!-- Waveforms inside Video -->
+  <path d="M 230,210 Q 300,130 380,220 T 520,200 T 570,190" fill="none" stroke="url(#np-orange)" stroke-width="4"/>
+  <path d="M 230,230 Q 320,290 410,200 T 530,240 T 570,220" fill="none" stroke="url(#np-purple)" stroke-width="3" opacity="0.8"/>
+  <path d="M 230,190 Q 310,260 400,160 T 510,220 T 570,170" fill="none" stroke="url(#np-cyan)" stroke-width="2" opacity="0.6"/>
+
+  <!-- Center Play Button -->
+  <circle cx="400" cy="205" r="28" fill="#f97316"/>
+  <polygon points="394,193 412,205 394,217" fill="#ffffff"/>
+
+  <!-- Player Top Bar -->
+  <g font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold">
+    <text x="230" y="120" fill="#f97316">AI PROMPT TO VIDEO GENERATOR</text>
+    <text x="570" y="120" fill="#38bdf8" text-anchor="end">4K 60FPS</text>
+  </g>
+
+  <!-- Video Timeline Scrub Bar -->
+  <rect x="230" y="295" width="340" height="8" rx="4" fill="#1e293b"/>
+  <rect x="230" y="295" width="220" height="8" rx="4" fill="url(#np-orange)"/>
+  <circle cx="450" cy="299" r="6" fill="#fbbf24"/>
+
+  <!-- Bottom Feature Pill Badges -->
+  <g font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#f1f5f9">
+    <!-- Badge 1 -->
+    <rect x="80" y="380" width="190" height="46" rx="12" fill="#0b0f19" stroke="#334155" stroke-width="1.5"/>
+    <circle cx="106" cy="403" r="12" fill="#f97316" opacity="0.2"/>
+    <circle cx="106" cy="403" r="6" fill="#f97316"/>
+    <text x="128" y="408">Diffusion Model</text>
+
+    <!-- Badge 2 -->
+    <rect x="295" y="380" width="210" height="46" rx="12" fill="#0b0f19" stroke="#f97316" stroke-width="1.5"/>
+    <circle cx="321" cy="403" r="12" fill="#f97316" opacity="0.2"/>
+    <polygon points="321,395 315,405 321,405 321,411 327,401 321,401" fill="#fbbf24"/>
+    <text x="343" y="408">Real-Time Synthesis</text>
+
+    <!-- Badge 3 -->
+    <rect x="530" y="380" width="190" height="46" rx="12" fill="#0b0f19" stroke="#334155" stroke-width="1.5"/>
+    <circle cx="556" cy="403" r="12" fill="#818cf8" opacity="0.2"/>
+    <rect x="550" y="397" width="12" height="12" rx="2" fill="#818cf8"/>
+    <text x="578" y="408">Cinematic Render</text>
+  </g>
+</svg>

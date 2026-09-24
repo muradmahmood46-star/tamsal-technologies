@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="cp-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050a14"/>
+      <stop offset="60%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#0c1924"/>
+    </linearGradient>
+    <linearGradient id="cp-orange" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="cp-emerald" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#cp-bg)"/>
+
+  <!-- Grid -->
+  <g stroke="#ffffff" stroke-width="1" opacity="0.06">
+    <line x1="0" y1="125" x2="800" y2="125"/>
+    <line x1="0" y1="250" x2="800" y2="250"/>
+    <line x1="0" y1="375" x2="800" y2="375"/>
+    <line x1="160" y1="0" x2="160" y2="500"/>
+    <line x1="320" y1="0" x2="320" y2="500"/>
+    <line x1="480" y1="0" x2="480" y2="500"/>
+    <line x1="640" y1="0" x2="640" y2="500"/>
+  </g>
+
+  <!-- Ambient Glow -->
+  <circle cx="260" cy="220" r="160" fill="#f97316" opacity="0.14"/>
+  <circle cx="580" cy="220" r="160" fill="#10b981" opacity="0.13"/>
+
+  <!-- Left Analytics Chart Board -->
+  <rect x="90" y="80" width="390" height="260" rx="20" fill="#0b0f19" stroke="#f97316" stroke-width="1.5"/>
+
+  <!-- Chart Header -->
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="120" y="125" fill="#f8fafc" font-size="16" font-weight="bold">AI Growth &amp; Strategy Engine</text>
+    <rect x="365" y="108" width="95" height="24" rx="6" fill="#10b981" opacity="0.15"/>
+    <text x="412" y="124" fill="#34d399" font-size="11" font-weight="bold" text-anchor="middle">+68.4% ROI</text>
+  </g>
+
+  <!-- Bars -->
+  <rect x="125" y="240" width="34" height="70" rx="6" fill="#1e293b"/>
+  <rect x="175" y="210" width="34" height="100" rx="6" fill="#1e293b"/>
+  <rect x="225" y="180" width="34" height="130" rx="6" fill="url(#cp-orange)"/>
+  <rect x="275" y="150" width="34" height="160" rx="6" fill="url(#cp-orange)"/>
+  <rect x="325" y="190" width="34" height="120" rx="6" fill="url(#cp-orange)"/>
+  <rect x="375" y="130" width="34" height="180" rx="6" fill="url(#cp-emerald)"/>
+  <rect x="425" y="110" width="34" height="200" rx="6" fill="#38bdf8"/>
+
+  <!-- Spline Curve -->
+  <path d="M 130,240 Q 220,160 320,170 T 435,100" fill="none" stroke="#38bdf8" stroke-width="3"/>
+  <circle cx="435" cy="100" r="5" fill="#38bdf8"/>
+
+  <!-- Right Strategy Matrix Cards -->
+  <g font-family="Arial, Helvetica, sans-serif">
+    <!-- Card 1 -->
+    <rect x="505" y="80" width="205" height="80" rx="14" fill="#0b0f19" stroke="#334155" stroke-width="1"/>
+    <circle cx="530" cy="110" r="14" fill="#fbbf24" opacity="0.2"/>
+    <polygon points="530,102 524,112 530,112 530,118 536,108 530,108" fill="#fbbf24"/>
+    <text x="555" y="114" fill="#f8fafc" font-size="13" font-weight="bold">Auto Campaigns</text>
+    <text x="525" y="142" fill="#94a3b8" font-size="11">Dynamic Ad Targeting</text>
+
+    <!-- Card 2 -->
+    <rect x="505" y="170" width="205" height="80" rx="14" fill="#0b0f19" stroke="#f97316" stroke-width="1.5"/>
+    <circle cx="530" cy="200" r="14" fill="#f97316" opacity="0.2"/>
+    <path d="M 524,204 L 528,198 L 532,201 L 536,194" fill="none" stroke="#f97316" stroke-width="2"/>
+    <text x="555" y="204" fill="#f8fafc" font-size="13" font-weight="bold">Strategy Engine</text>
+    <text x="525" y="232" fill="#cbd5e1" font-size="11">Predictive Inventory Sync</text>
+
+    <!-- Card 3 -->
+    <rect x="505" y="260" width="205" height="80" rx="14" fill="#0b0f19" stroke="#334155" stroke-width="1"/>
+    <circle cx="530" cy="290" r="14" fill="#34d399" opacity="0.2"/>
+    <polygon points="530,282 524,292 530,292 530,298 536,288 530,288" fill="#34d399"/>
+    <text x="555" y="294" fill="#f8fafc" font-size="13" font-weight="bold">Smart Margins</text>
+    <text x="525" y="322" fill="#94a3b8" font-size="11">Real-Time Price Balancing</text>
+  </g>
+
+  <!-- Bottom Badges -->
+  <g font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#f1f5f9">
+    <rect x="90" y="380" width="180" height="46" rx="12" fill="#0b0f19" stroke="#334155" stroke-width="1.5"/>
+    <circle cx="116" cy="403" r="10" fill="#f97316" opacity="0.2"/>
+    <circle cx="116" cy="403" r="5" fill="#f97316"/>
+    <text x="136" y="408">AI / ML Models</text>
+
+    <rect x="295" y="380" width="210" height="46" rx="12" fill="#0b0f19" stroke="#f97316" stroke-width="1.5"/>
+    <circle cx="321" cy="403" r="10" fill="#10b981" opacity="0.2"/>
+    <circle cx="321" cy="403" r="5" fill="#10b981"/>
+    <text x="341" y="408">Predictive Insights</text>
+
+    <rect x="530" y="380" width="180" height="46" rx="12" fill="#0b0f19" stroke="#334155" stroke-width="1.5"/>
+    <circle cx="556" cy="403" r="10" fill="#38bdf8" opacity="0.2"/>
+    <circle cx="556" cy="403" r="5" fill="#38bdf8"/>
+    <text x="576" y="408">Full-Stack Scale</text>
+  </g>
+</svg>

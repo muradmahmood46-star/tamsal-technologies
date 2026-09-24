@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="ts-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070c18"/>
+      <stop offset="60%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#18111e"/>
+    </linearGradient>
+    <linearGradient id="ts-orange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#ts-bg)"/>
+
+  <!-- Grid -->
+  <g stroke="#ffffff" stroke-width="1" opacity="0.06">
+    <line x1="0" y1="125" x2="800" y2="125"/>
+    <line x1="0" y1="250" x2="800" y2="250"/>
+    <line x1="0" y1="375" x2="800" y2="375"/>
+    <line x1="160" y1="0" x2="160" y2="500"/>
+    <line x1="320" y1="0" x2="320" y2="500"/>
+    <line x1="480" y1="0" x2="480" y2="500"/>
+    <line x1="640" y1="0" x2="640" y2="500"/>
+  </g>
+
+  <!-- Ambient Glow -->
+  <circle cx="280" cy="220" r="160" fill="#f97316" opacity="0.14"/>
+  <circle cx="580" cy="240" r="160" fill="#38bdf8" opacity="0.13"/>
+
+  <!-- Multi-Vendor Marketplace Central Hub -->
+  <rect x="270" y="85" width="260" height="155" rx="20" fill="#0b0f19" stroke="url(#ts-orange)" stroke-width="2"/>
+  <circle cx="400" cy="135" r="28" fill="#f97316" opacity="0.2"/>
+  
+  <!-- Vector Shopping Cart in Hub -->
+  <g transform="translate(385, 120)" stroke="#f97316" stroke-width="2.5" fill="none">
+    <path d="M 0,0 L 5,0 L 10,16 L 26,16 L 29,6 L 7,6"/>
+    <circle cx="11" cy="22" r="2.5" fill="#f97316"/>
+    <circle cx="24" cy="22" r="2.5" fill="#f97316"/>
+  </g>
+
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="400" y="190" fill="#ffffff" font-size="15" font-weight="bold">Multi-Vendor Hub</text>
+    <text x="400" y="212" fill="#94a3b8" font-size="11">Unified Cart &amp; Multi-Store Orders</text>
+  </g>
+
+  <!-- Network Dash Lines -->
+  <g stroke="#f97316" stroke-width="2" stroke-dasharray="6,4" opacity="0.45">
+    <line x1="270" y1="135" x2="180" y2="120"/>
+    <line x1="270" y1="195" x2="180" y2="235"/>
+    <line x1="530" y1="135" x2="620" y2="120"/>
+    <line x1="530" y1="195" x2="620" y2="235"/>
+  </g>
+
+  <!-- Vendor Nodes -->
+  <g font-family="Arial, Helvetica, sans-serif">
+    <!-- Vendor 1 -->
+    <rect x="80" y="90" width="150" height="68" rx="14" fill="#0b0f19" stroke="#334155" stroke-width="1"/>
+    <circle cx="104" cy="124" r="10" fill="#f97316" opacity="0.2"/>
+    <rect x="98" y="118" width="12" height="12" rx="2" fill="#f97316"/>
+    <text x="124" y="120" fill="#f8fafc" font-size="12" font-weight="bold">Tech Store</text>
+    <text x="124" y="138" fill="#34d399" font-size="10">142 Products</text>
+
+    <!-- Vendor 2 -->
+    <rect x="80" y="205" width="150" height="68" rx="14" fill="#0b0f19" stroke="#334155" stroke-width="1"/>
+    <circle cx="104" cy="239" r="10" fill="#fbbf24" opacity="0.2"/>
+    <rect x="98" y="233" width="12" height="12" rx="2" fill="#fbbf24"/>
+    <text x="124" y="235" fill="#f8fafc" font-size="12" font-weight="bold">Apparel Hub</text>
+    <text x="124" y="253" fill="#34d399" font-size="10">89 Products</text>
+
+    <!-- Vendor 3 -->
+    <rect x="570" y="90" width="150" height="68" rx="14" fill="#0b0f19" stroke="#334155" stroke-width="1"/>
+    <circle cx="594" cy="124" r="10" fill="#38bdf8" opacity="0.2"/>
+    <rect x="588" y="118" width="12" height="12" rx="2" fill="#38bdf8"/>
+    <text x="614" y="120" fill="#f8fafc" font-size="12" font-weight="bold">Gadget Pro</text>
+    <text x="614" y="138" fill="#34d399" font-size="10">210 Products</text>
+
+    <!-- Vendor 4 -->
+    <rect x="570" y="205" width="150" height="68" rx="14" fill="#0b0f19" stroke="#334155" stroke-width="1"/>
+    <circle cx="594" cy="239" r="10" fill="#a855f7" opacity="0.2"/>
+    <rect x="588" y="233" width="12" height="12" rx="2" fill="#a855f7"/>
+    <text x="614" y="235" fill="#f8fafc" font-size="12" font-weight="bold">Fashion Mall</text>
+    <text x="614" y="253" fill="#34d399" font-size="10">75 Products</text>
+  </g>
+
+  <!-- Process Bar -->
+  <g transform="translate(160, 295)" font-family="Arial, Helvetica, sans-serif">
+    <rect x="0" y="0" width="480" height="48" rx="12" fill="#0b0f19" stroke="#334155" stroke-width="1"/>
+    <circle cx="28" cy="24" r="10" fill="#f97316" opacity="0.2"/>
+    <circle cx="28" cy="24" r="5" fill="#f97316"/>
+    <text x="48" y="29" fill="#e2e8f0" font-size="12" font-weight="bold">Unified Shopping Cart &amp; Automatic Split Payout</text>
+    <rect x="390" y="10" width="75" height="28" rx="8" fill="url(#ts-orange)"/>
+    <text x="427" y="28" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Checkout</text>
+  </g>
+
+  <!-- Bottom Badges -->
+  <g font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#f1f5f9">
+    <rect x="80" y="380" width="190" height="46" rx="12" fill="#0b0f19" stroke="#334155" stroke-width="1.5"/>
+    <circle cx="106" cy="403" r="10" fill="#f97316" opacity="0.2"/>
+    <circle cx="106" cy="403" r="5" fill="#f97316"/>
+    <text x="126" y="408">Vendor Portals</text>
+
+    <rect x="295" y="380" width="210" height="46" rx="12" fill="#0b0f19" stroke="#f97316" stroke-width="1.5"/>
+    <circle cx="321" cy="403" r="10" fill="#38bdf8" opacity="0.2"/>
+    <circle cx="321" cy="403" r="5" fill="#38bdf8"/>
+    <text x="341" y="408">Laravel &amp; MySQL</text>
+
+    <rect x="530" y="380" width="190" height="46" rx="12" fill="#0b0f19" stroke="#334155" stroke-width="1.5"/>
+    <circle cx="556" cy="403" r="10" fill="#34d399" opacity="0.2"/>
+    <circle cx="556" cy="403" r="5" fill="#34d399"/>
+    <text x="576" y="408">Split Payouts</text>
+  </g>
+</svg>

@@ -1,343 +1,136 @@
-<nav class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-4" 
-     [class.bg-slate-950/80]="isScrolled" 
-     [class.backdrop-blur-md]="isScrolled" 
-     [class.shadow-xl]="isScrolled" 
-     [class.border-b]="isScrolled"
-     [class.border-white/5]="isScrolled"
-     [class.bg-transparent]="!isScrolled">
+<!-- ==================== GLOBAL STICKY NAVIGATION BAR ==================== -->
+<nav class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-3.5" 
+     [class.glass-nav]="isScrolled" 
+     [class.bg-slate-950/80]="!isScrolled"
+     [class.backdrop-blur-md]="!isScrolled"
+     [class.border-b]="!isScrolled"
+     [class.border-white/5]="!isScrolled">
   <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-    <a href="#" class="text-2xl font-black text-white tracking-wider hover:opacity-90 transition">
-      {{ companyName }}<span class="text-orange-500 text-3xl">.</span>
+    <!-- Brand Logo & Name -->
+    <a routerLink="/" (click)="closeMobileMenu()" class="flex items-center gap-3 group">
+      <div class="w-10 h-10 rounded-xl overflow-hidden border border-orange-500/30 p-0.5 bg-slate-900 shadow-md shadow-orange-500/10 group-hover:border-orange-500 transition-all duration-300 group-hover:scale-105">
+        <img src="logo.jpeg" alt="Tamsal Logo" class="w-full h-full object-cover rounded-lg" onerror="this.style.display='none'">
+      </div>
+      <div class="flex flex-col">
+        <span class="text-lg md:text-xl font-black text-white tracking-wider font-display flex items-center">
+          {{ companyName }}<span class="text-orange-500 text-2xl leading-none">.</span>
+        </span>
+        <span class="text-[9px] uppercase tracking-widest text-slate-400 font-semibold -mt-1 hidden sm:block">
+          Digital Solutions &amp; AI
+        </span>
+      </div>
     </a>
-    <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-300">
-      <a href="#" class="hover:text-orange-500 transition-colors duration-300 relative group py-2">
+
+    <!-- Desktop Nav Links -->
+    <div class="hidden lg:flex items-center space-x-7 text-sm font-semibold text-slate-300">
+      <a routerLink="/" class="hover:text-orange-400 transition-colors duration-200 relative group py-1.5">
         Home
-        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-amber-400 transition-all duration-300 group-hover:w-full"></span>
       </a>
-      <a href="#about" class="hover:text-orange-500 transition-colors duration-300 relative group py-2">
+      <a routerLink="/" fragment="about" class="hover:text-orange-400 transition-colors duration-200 relative group py-1.5">
         About Us
-        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-amber-400 transition-all duration-300 group-hover:w-full"></span>
       </a>
-      <a href="#work" class="hover:text-orange-500 transition-colors duration-300 relative group py-2">
+      <a routerLink="/" fragment="work" class="hover:text-orange-400 transition-colors duration-200 relative group py-1.5">
         Our Work
-        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-amber-400 transition-all duration-300 group-hover:w-full"></span>
       </a>
-      <a href="#services" class="hover:text-orange-500 transition-colors duration-300 relative group py-2">
+      <a routerLink="/" fragment="services" class="hover:text-orange-400 transition-colors duration-200 relative group py-1.5">
         Expertise
-        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-amber-400 transition-all duration-300 group-hover:w-full"></span>
       </a>
-      <a href="#team" class="hover:text-orange-500 transition-colors duration-300 relative group py-2">
-        Our Team
-        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+      <a routerLink="/products" class="hover:text-orange-400 transition-colors duration-200 relative group py-1.5">
+        Products &amp; Pricing
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-amber-400 transition-all duration-300 group-hover:w-full"></span>
       </a>
-      <a href="#contact" class="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-6 py-2.5 rounded-full hover:from-orange-600 hover:to-amber-600 transition-all duration-300 shadow-lg shadow-orange-500/20 hover:scale-105 active:scale-95">
+      <a routerLink="/" fragment="team" class="hover:text-orange-400 transition-colors duration-200 relative group py-1.5">
+        Team
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-amber-400 transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a routerLink="/" fragment="contact" class="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider hover:from-orange-600 hover:to-amber-600 transition-all duration-300 shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40 hover:scale-105 active:scale-95">
         Contact Us
       </a>
     </div>
+
+    <!-- Mobile Hamburger Toggle -->
+    <button (click)="toggleMobileMenu()" 
+            class="lg:hidden p-2 rounded-xl bg-slate-900 border border-white/10 text-slate-300 hover:text-white focus:outline-none shadow-sm"
+            aria-label="Toggle Navigation">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path *ngIf="!isMobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        <path *ngIf="isMobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  <div *ngIf="isMobileMenuOpen" 
+       class="lg:hidden glass-nav mt-3 px-6 py-6 border-b border-white/10 space-y-4 animate-fade-in-up">
+    <a (click)="closeMobileMenu()" routerLink="/" class="block text-base font-semibold text-slate-200 hover:text-orange-400 py-1">Home</a>
+    <a (click)="closeMobileMenu()" routerLink="/" fragment="about" class="block text-base font-semibold text-slate-200 hover:text-orange-400 py-1">About Us</a>
+    <a (click)="closeMobileMenu()" routerLink="/" fragment="work" class="block text-base font-semibold text-slate-200 hover:text-orange-400 py-1">Our Work</a>
+    <a (click)="closeMobileMenu()" routerLink="/" fragment="services" class="block text-base font-semibold text-slate-200 hover:text-orange-400 py-1">Expertise &amp; Roadmap</a>
+    <a (click)="closeMobileMenu()" routerLink="/products" class="block text-base font-semibold text-slate-200 hover:text-orange-400 py-1">Products &amp; Pricing</a>
+    <a (click)="closeMobileMenu()" routerLink="/" fragment="team" class="block text-base font-semibold text-slate-200 hover:text-orange-400 py-1">Our Team</a>
+    <a (click)="closeMobileMenu()" routerLink="/" fragment="contact" class="block text-center bg-gradient-to-r from-orange-500 to-amber-500 text-white py-3 rounded-xl font-bold shadow-md">Contact Us</a>
   </div>
 </nav>
 
-<section class="relative min-h-screen flex items-center bg-slate-950 text-white overflow-hidden pt-20">
-  <div class="absolute top-1/4 right-0 w-96 h-96 bg-orange-600/10 rounded-full animate-glow"></div>
-  <div class="absolute bottom-1/4 left-10 w-80 h-80 bg-amber-500/5 rounded-full animate-glow" style="animation-delay: -3s;"></div>
-  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(249,115,22,0.12),transparent_55%)]"></div>
 
-  <div class="max-w-7xl mx-auto px-6 relative z-10 w-full text-center md:text-left grid md:grid-cols-5 gap-12 items-center">
-    <div class="md:col-span-3 space-y-6">
-      <span class="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/30 text-orange-400 font-bold tracking-widest text-xs uppercase px-4 py-1.5 rounded-full">
-        <span class="w-2 h-2 rounded-full bg-orange-500 animate-ping"></span>
-       Where Innovation Meets Intelligence
-      </span>
-     <h1 class="text-5xl md:text-7xl font-black tracking-tight leading-none" 
-    style="animation: landDown 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;">
-  Tamsal Technologies:<br>
-  <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-500 to-orange-400">
-    Scalable Solutions
-  </span>
-</h1>
-
-<div style="display: none;">
-  <style>
-    @keyframes landDown {
-      0% { transform: translateY(-70px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
-    }
-  </style>
-</div>
-      <p class="text-lg text-slate-400 max-w-xl leading-relaxed">
-        We provide cutting-edge software engineering, database management, and AI-driven commerce tools built for modern enterprises.
-      </p>
-      <div class="flex flex-wrap gap-4 justify-center md:justify-start pt-2">
-        <a href="#contact" class="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-8 py-4 rounded-xl font-bold hover:from-orange-600 hover:to-amber-600 transition-all duration-300 shadow-xl shadow-orange-500/20 hover:-translate-y-0.5">
-          Start Project
-        </a>
-        <a href="#work" class="bg-white/5 border border-white/10 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-all duration-300 backdrop-blur-sm hover:border-white/20">
-          View Our Work
-        </a>
-      </div>
-    </div>
-<!-- RIGHT SIDE: COMPANY LOGO IMAGE -->
-    <!-- ml-12 lagane se poora box aur logo right side par shift ho jayega -->
-<div class="md:col-span-2 hidden md:flex justify-start items-start ml-48 relative">
-<div class="w-[200px] h-[200px] rounded-2xl bg-gradient-to-br from-slate-900/40 to-slate-950/40 flex items-center justify-center p-3 relative overflow-hidden group" style="border: 2px solid #833d14;">
-        <div class="absolute -inset-px bg-gradient-to-br from-orange-500/20 via-transparent to-amber-500/10 opacity-50 rounded-2xl group-hover:opacity-80 transition duration-700"></div>
-        
-       <!-- Real Logo Image Integration -->
-        <div class="text-center relative z-10 w-[280px] flex flex-col items-center justify-center p-2">
-          <img src="logo.jpeg" 
-               alt="Tamsal Technologies Logo" 
-               class="max-w-[95%] max-h-[160px] object-contain rounded-lg transform transition-transform duration-700 group-hover:scale-105"
-               onerror="this.src='https://placehold.co/400x400/0f172a/f97316?text=TAMSAL+TECH'">
-          
-          <!-- Subtitle text under logo -->
-          <p class="mt-2 text-[9px] font-mono text-slate-400 tracking-widest uppercase opacity-80">
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="w-full flex justify-center items-center my-4">
-  <div class="w-[85%] h-[2px]" style="background: linear-gradient(to right, transparent, #f97316, transparent); opacity: 0.6;"></div>
-</div>
-<section id="about" class="py-24 bg-slate-900 border-t border-white/5 relative overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
-    <div class="space-y-6">
-      <h2 class="text-4xl font-black text-white tracking-tight">Expertise in Full-Stack & AI Solutions</h2>
-      <p class="text-slate-400 leading-relaxed text-base">
-        Led by <strong class="text-white font-semibold">Murad Mahmood (CEO)</strong> and <strong class="text-white font-semibold">Rashid Ahmed (Senior Engineer & Software Consultant)</strong>, Tamsal Technologies delivers robust solutions for international clients. We specialize in complex logic and modern technical architecture.
-      </p>
-      <div class="space-y-4 pt-2">
-        <div class="flex items-center gap-3 text-slate-300">
-          <span class="w-6 h-6 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 text-sm font-bold">✔</span> 
-          Professional Full-Stack Angular Applications
-        </div>
-        <div class="flex items-center gap-3 text-slate-300">
-          <span class="w-6 h-6 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 text-sm font-bold">✔</span> 
-          Secure Enterprise Database Management
-        </div>
-        <div class="flex items-center gap-3 text-slate-300">
-          <span class="w-6 h-6 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 text-sm font-bold">✔</span> 
-          AI-Driven Business Automation Tools
-        </div>
-      </div>
-    </div>
-    
-    <div class="bg-gradient-to-b from-slate-950 to-slate-900 p-10 rounded-2xl border border-white/5 text-center relative overflow-hidden group shadow-2xl">
-      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-amber-400"></div>
-      <div class="text-7xl font-black text-transparent bg-clip-text bg-gradient-to-b from-orange-500 to-amber-500 mb-2 tracking-tight group-hover:scale-105 transition duration-500">
-        5+
-      </div>
-      <div class="text-xl font-bold text-white mb-2">Years of Combined Experience</div>
-      <p class="text-sm text-slate-500 max-w-xs mx-auto leading-relaxed">
-        Delivering Industry Grade Architecture and High-Performance Enterprise Solutions Globally.
-      </p>
-    </div>
-  </div>
-</section>
-<!-- Custom Style Definition taake keyframes hamesha load rahein -->
-<style>
-  @keyframes marquee-forced {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-</style>
-<!-- Angular component encapsulation ko bypass karne ke liye style -->
-<style>
-  ::ng-deep @keyframes marquee-forced {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-</style>
-
-<div class="w-full overflow-hidden bg-gradient-to-r from-orange-600 to-orange-500 py-6 border-y border-orange-400/30 shadow-2xl relative z-20">
-  <div class="flex flex-nowrap gap-16 whitespace-nowrap" 
-       style="display: flex; width: max-content; animation: marquee-forced 25s linear infinite;">
-    
-    <div *ngFor="let item of marqueeItems" class="flex items-center gap-6 text-white font-black uppercase text-sm tracking-widest">
-      <span class="text-amber-300 text-xl">•</span>
-      <span>{{ item }}</span>
-    </div>
-    
-    <div *ngFor="let item of marqueeItems" class="flex items-center gap-6 text-white font-black uppercase text-sm tracking-widest" aria-hidden="true">
-      <span class="text-amber-300 text-xl">•</span>
-      <span>{{ item }}</span>
-    </div>
-
-  </div>
-</div>
+<!-- ==================== ROUTED PAGE VIEW ==================== -->
+<main>
+  <router-outlet></router-outlet>
+</main>
 
 
-<!-- ==================== WORK / PORTFOLIO SECTION ==================== -->
- <section id="work" class="py-24 bg-slate-950 relative overflow-hidden">
-  <!-- Subtle Ambient Top-Right Glow -->
-  <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[150px] pointer-events-none"></div>
-
-  <div class="max-w-7xl mx-auto px-6 relative z-10">
-    <!-- Animated Classical Header -->
-    <div class="mb-16 text-center md:text-left space-y-3">
-      <span class="text-orange-500 font-bold text-xs tracking-widest uppercase bg-orange-500/10 px-4 py-1.5 rounded-full border border-orange-500/20 inline-block">
-        Featured Projects
-      </span>
-      <h2 class="text-4xl md:text-5xl font-black text-white tracking-tight leading-none">
-        Our Recent <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-400">Work</span>
-      </h2>
-    </div>
-    
-    <!-- Projects Grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Classical Glassmorphism & Zoom Card -->
-      <div *ngFor="let proj of projects" class="group relative p-8 bg-slate-900/40 backdrop-blur-md rounded-2xl border border-white/5 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-orange-500/40 hover:shadow-[0_20px_40px_rgba(234,88,12,0.15)]">
-        
-        <!-- Deep Corner Glowing Radial Gradient on Hover -->
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-[radial-gradient(circle_at_bottom_left,rgba(234,88,12,0.12),transparent_65%)] transition-opacity duration-500"></div>
-        
-        <!-- Card Content Wrap for layered animation -->
-        <div class="relative z-10 space-y-4">
-          <!-- Icon Container with 3D Rotate Effect on Hover -->
-          <div class="w-14 h-14 bg-slate-950/80 rounded-xl border border-white/10 flex items-center justify-center text-3xl shadow-inner transform group-hover:scale-110 group-hover:rotate-6 group-hover:border-orange-500/30 transition-all duration-500">
-            {{ proj.icon }}
-          </div>
-          
-          <!-- Animated Heading Color Shift -->
-          <h3 class="text-xl font-bold text-white tracking-wide group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-amber-300 transition-all duration-300">
-            {{ proj.title }}
-          </h3>
-          
-          <!-- Description Text with Custom Height -->
-          <p class="text-slate-400 text-sm leading-relaxed h-20 overflow-hidden group-hover:text-slate-200 transition-colors duration-300">
-            {{ proj.desc }}
-          </p>
-          
-          <!-- Tags Wrapper with Animated Badges -->
-          <div class="flex flex-wrap gap-2 pt-2">
-            <span *ngFor="let tag of proj.tags" class="text-xs bg-slate-950/60 border border-white/5 px-3 py-1.5 rounded-lg text-slate-400 font-medium group-hover:border-orange-500/30 group-hover:bg-orange-500/10 group-hover:text-orange-300 transition-all duration-300">
-              {{ tag }}
-            </span>
-          </div>
-        </div>
-
-        <!-- Classic Bottom Link Indicator Line -->
-        <div class="absolute bottom-0 left-0 h-[3px] w-0 bg-gradient-to-r from-orange-500 to-amber-400 group-hover:w-full transition-all duration-500"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ==================== SERVICES SECTION ==================== -->
-<section id="services" class="py-24 bg-slate-900 border-t border-white/5 relative overflow-hidden">
-  <!-- Subtle Ambient Bottom-Left Glow -->
-  <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[150px] pointer-events-none"></div>
-
-  <div class="max-w-7xl mx-auto px-6 relative z-10">
-    <!-- Animated Center Header -->
-    <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-      <span class="text-orange-500 font-bold text-xs tracking-widest uppercase bg-orange-500/10 px-4 py-1.5 rounded-full border border-orange-500/20 inline-block">
-        Our Core Expertise
-      </span>
-      <h2 class="text-4xl md:text-5xl font-black text-white tracking-tight leading-none">
-        Services We <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-400">Offer</span>
-      </h2>
-    </div>
-    
-    <!-- Services Grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Premium Tech Matte Tilted Card -->
-      <div *ngFor="let service of services" class="relative p-8 bg-slate-950 rounded-2xl border border-white/5 hover:border-orange-500/40 hover:bg-slate-950/40 hover:shadow-[0_20px_40px_rgba(249,115,22,0.1)] transition-all duration-500 group overflow-hidden">
-        
-        <!-- Hover Gradient Glow Behind Icon -->
-        <div class="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-        <!-- Icon Animation with Dropped Neon Shadow -->
-        <div class="text-4xl mb-5 text-orange-500 filter drop-shadow-[0_4px_10px_rgba(234,88,12,0.4)] group-hover:scale-120 group-hover:-translate-y-1 transition duration-500 inline-block">
-          {{ service.icon }}
-        </div>
-        
-        <!-- Service Title Content -->
-        <h3 class="text-xl font-bold text-white mb-3 tracking-wide group-hover:text-orange-400 transition-colors duration-300">
-          {{ service.title }}
-        </h3>
-        
-        <!-- Service Description Content -->
-        <p class="text-slate-400 text-sm leading-relaxed group-hover:text-slate-300 transition-colors duration-300">
-          {{ service.desc }}
-        </p>
-
-        <!-- Classic Minimal Arrow appearing on hover -->
-        <div class="mt-6 flex items-center text-xs font-bold text-orange-500 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-          Discover Core Architecture <span class="ml-2">→</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section id="team" class="py-24 bg-slate-950">
+<!-- ==================== GLOBAL FOOTER ==================== -->
+<footer class="py-14 bg-slate-950 border-t border-white/10 text-slate-400 text-sm">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center max-w-3xl mx-auto mb-16 space-y-2">
-      <span class="text-orange-500 font-bold text-sm tracking-widest uppercase block">Our Strategic Leadership</span>
-      <h2 class="text-4xl font-black text-white tracking-tight">Managed by Industry Professionals</h2>
-    </div>
-    
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div *ngFor="let member of team" class="bg-slate-900 p-8 rounded-2xl border border-white/5 text-center group hover:border-orange-500/30 transition-all duration-300 hover:shadow-xl shadow-md relative overflow-hidden">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-0.5 bg-orange-500/0 group-hover:w-full group-hover:bg-orange-500 transition-all duration-500"></div>
-        <div class="w-20 h-20 bg-slate-950 text-orange-400 font-black text-3xl flex items-center justify-center rounded-full mx-auto mb-6 border border-white/10 group-hover:bg-gradient-to-br group-hover:from-orange-500 group-hover:to-amber-500 group-hover:text-white group-hover:border-transparent transition-all duration-500 shadow-inner group-hover:scale-105">
-          {{ member.initial }}
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+      <!-- Column 1: Brand & Logo -->
+      <div class="md:col-span-2 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl overflow-hidden border border-orange-500/30 p-0.5 bg-slate-900 shadow-sm">
+            <img src="logo.jpeg" alt="Tamsal Logo" class="w-full h-full object-cover rounded-lg" onerror="this.style.display='none'">
+          </div>
+          <span class="text-xl font-black text-white tracking-wider font-display">
+            {{ companyName }}<span class="text-orange-500 text-2xl leading-none">.</span>
+          </span>
         </div>
-        <h3 class="text-xl font-bold text-white mb-1 group-hover:text-orange-400 transition-colors duration-300">
-          {{ member.name }}
-        </h3>
-        <p class="text-orange-500 font-bold text-xs tracking-wider uppercase mb-4">
-          {{ member.role }}
-        </p>
-        <p class="text-slate-400 text-sm leading-relaxed px-2">
-          {{ member.desc }}
+        <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
+          Delivering enterprise-grade software engineering, modern business websites, retail POS systems, and custom ERP solutions built to scale.
         </p>
       </div>
-    </div>
-  </div>
-</section>
 
-<section id="contact" class="py-24 bg-slate-900 border-t border-white/5 relative overflow-hidden">
-  <div class="absolute -bottom-20 right-0 w-80 h-80 bg-orange-600/5 rounded-full blur-3xl"></div>
-  <div class="max-w-4xl mx-auto px-6 text-center relative z-10 space-y-4">
-    <h2 class="text-4xl font-black text-white tracking-tight">Ready to Scale Your Business?</h2>
-    <p class="text-slate-400 max-w-xl mx-auto leading-relaxed text-base pb-6">
-      Connect with Tamsal Technologies today and let's turn your technical vision into a secure, scalable digital reality.
-    </p>
-    
-    <div class="grid md:grid-cols-2 gap-6 text-left">
-      <div class="p-6 bg-slate-950 rounded-xl border border-white/5 flex items-center gap-5 hover:border-orange-500/20 transition duration-300 shadow-xl group">
-        <div class="w-12 h-12 rounded-lg bg-orange-500/10 text-orange-400 text-2xl flex items-center justify-center group-hover:bg-orange-500 group-hover:text-white transition duration-300 shadow-inner">
-          ✉
-        </div>
-        <div>
-          <p class="text-orange-500 font-black text-xs uppercase tracking-wider mb-0.5">Email Us</p>
-        <a [href]="'mailto:' + email" class="text-base text-white font-medium hover:text-orange-400 transition break-all">{{ email }}</a>
-        </div>
+      <!-- Column 2: Quick Links -->
+      <div class="space-y-3">
+        <p class="text-xs font-bold text-white uppercase tracking-widest font-mono">Quick Links</p>
+        <ul class="space-y-2 text-sm">
+          <li><a routerLink="/" class="hover:text-orange-400 transition-colors">Home</a></li>
+          <li><a routerLink="/" fragment="about" class="hover:text-orange-400 transition-colors">About Us</a></li>
+          <li><a routerLink="/" fragment="work" class="hover:text-orange-400 transition-colors">Featured Projects</a></li>
+          <li><a routerLink="/" fragment="services" class="hover:text-orange-400 transition-colors">Services &amp; Roadmap</a></li>
+          <li><a routerLink="/products" class="hover:text-orange-400 transition-colors">Products &amp; Pricing</a></li>
+        </ul>
       </div>
-      
-      <div class="p-6 bg-slate-950 rounded-xl border border-white/5 flex items-center gap-5 hover:border-orange-500/20 transition duration-300 shadow-xl group">
-        <div class="w-12 h-12 rounded-lg bg-orange-500/10 text-orange-400 text-2xl flex items-center justify-center group-hover:bg-orange-500 group-hover:text-white transition duration-300 shadow-inner">
-          📞
-        </div>
-        <div>
-          <p class="text-orange-500 font-black text-xs uppercase tracking-wider mb-0.5">Call Us</p>
-            <a [href]="'tel:' + phone" class="text-base text-white font-medium hover:text-orange-400 transition">{{ phone }}</a>
-        </div>
+
+      <!-- Column 3: Contact Info -->
+      <div class="space-y-3">
+        <p class="text-xs font-bold text-white uppercase tracking-widest font-mono">Contact Details</p>
+        <ul class="space-y-2.5 text-sm">
+          <li class="text-slate-300 font-medium break-all">{{ email }}</li>
+          <li class="text-slate-300 font-medium">{{ phone }}</li>
+          <li class="text-slate-400 text-xs">Mon – Sat: 9:00 AM – 7:00 PM</li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
 
-<footer class="py-12 bg-slate-950 border-t border-white/5 text-center text-slate-500 text-sm tracking-wide">
-  <div class="max-w-7xl mx-auto px-6 space-y-2">
-    <p>© 2026 <span class="text-slate-400 font-semibold">Tamsal Technologies</span>. All Rights Reserved.</p>
-    <p class="text-xs text-slate-600">
-      Managed by Murad Mahmood (CEO). Technical Consultant Rashid Ahmed (Sr. Software Engineer).
-    </p>
+    <!-- Bottom Copyright & Leadership Line -->
+    <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <p>© 2026 <span class="text-slate-300 font-semibold">Tamsal Technologies</span>. All Rights Reserved.</p>
+      <p class="text-slate-400">
+        Managed by Murad Mahmood (CEO). Ibtisam Ali — Technical Advisor &amp; AI Engineer.
+      </p>
+    </div>
   </div>
 </footer>
