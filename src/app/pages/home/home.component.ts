@@ -107,7 +107,7 @@ export class HomeComponent {
       title: 'Business Website Engineering',
       desc: 'High-conversion websites with WhatsApp ordering, Google Maps, contact forms, and admin panels for restaurants, pharmacies, clinics, and retail stores.',
       icon: '🌐',
-      image: 'services/website-dev.jpg',
+      image: 'services/website-dev.webp',
       badge: '3–7 Days Delivery',
       tags: ['Restaurants', 'Pharmacies', 'Retail', 'Clinics']
     },
@@ -115,7 +115,7 @@ export class HomeComponent {
       title: 'E-Commerce & Online Ordering',
       desc: 'Complete digital storefronts with product catalogs, shopping cart, WhatsApp checkout integration, order management, and secure admin dashboards.',
       icon: '🛒',
-      image: 'services/mobile-apps.jpg',
+      image: 'services/mobile-apps.webp',
       badge: 'Online Storefronts',
       tags: ['Multi-Vendor', 'Cart & Checkout', 'Order Tracking']
     },
@@ -123,7 +123,7 @@ export class HomeComponent {
       title: 'Point of Sale (POS) Software',
       desc: 'Fast barcode billing, real-time inventory management, customer/supplier ledgers, expense tracking, and automated daily sales reports.',
       icon: '🧾',
-      image: 'services/pos-system.jpg',
+      image: 'services/pos-system.webp',
       badge: 'Retail & Pharmacy POS',
       tags: ['Barcode Billing', 'Stock Control', 'Sales Reports']
     },
@@ -131,7 +131,7 @@ export class HomeComponent {
       title: 'Custom Enterprise ERP',
       desc: 'End-to-end business management platform integrating sales, purchases, inventory, accounts, HR, payroll, and customizable enterprise reporting.',
       icon: '🏢',
-      image: 'services/erp-suite.jpg',
+      image: 'services/erp-suite.webp',
       badge: 'Scalable Architecture',
       tags: ['Accounts', 'HR & Payroll', 'Inventory', 'Analytics']
     },
@@ -139,7 +139,7 @@ export class HomeComponent {
       title: 'Continuous Software Maintenance',
       desc: 'Reliable monthly technical support, high-speed hosting management, security updates, daily database backups, and on-demand feature upgrades.',
       icon: '🛡️',
-      image: 'services/cloud-devops.jpg',
+      image: 'services/cloud-devops.webp',
       badge: 'Monthly Retainers',
       tags: ['24/7 Monitoring', 'Security Patches', 'Cloud Hosting']
     },
@@ -147,7 +147,7 @@ export class HomeComponent {
       title: 'Custom AI & API Engineering',
       desc: 'Tailored full-stack business logic, RESTful API engineering, machine learning automation models, and custom client communication bots.',
       icon: '🤖',
-      image: 'services/ai-automation.jpg',
+      image: 'services/ai-automation.webp',
       badge: 'High-Performance Tech',
       tags: ['AI/ML Automation', 'Node.js & .NET', 'SQL Architecture']
     }
