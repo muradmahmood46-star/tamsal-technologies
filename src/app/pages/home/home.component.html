@@ -346,13 +346,13 @@
       </p>
     </div>
     
-    <!-- Services Grid: 2 cols on mobile, 3 on lg -->
-    <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4 lg:gap-6">
+    <!-- Services Grid: Full-width stretched cards on mobile, 2 on tablet, 3 on desktop -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full">
       <div *ngFor="let service of services" 
-           class="relative bg-slate-950/80 rounded-2xl sm:rounded-3xl border border-white/10 hover:border-orange-500/40 hover:bg-slate-950 hover:shadow-[0_25px_50px_rgba(249,115,22,0.18)] transition-all duration-500 group overflow-hidden flex flex-col justify-between">
+           class="relative bg-slate-950/80 rounded-2xl sm:rounded-3xl border border-white/10 hover:border-orange-500/40 hover:bg-slate-950 hover:shadow-[0_25px_50px_rgba(249,115,22,0.18)] transition-all duration-500 group overflow-hidden flex flex-col justify-between w-full">
         
         <!-- 4K Service Image Banner with Laser Scanline -->
-        <div class="relative w-full h-28 sm:h-40 bg-slate-950 overflow-hidden border-b border-white/10">
+        <div class="relative w-full h-44 sm:h-52 bg-slate-950 overflow-hidden border-b border-white/10">
           <img [src]="service.image" 
                [alt]="service.title" 
                loading="lazy"
@@ -363,36 +363,36 @@
           <div class="scanline-overlay group-hover:opacity-100 opacity-30 pointer-events-none"></div>
           
           <!-- Top Floating Service Badge -->
-          <div class="absolute top-2 left-2 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full bg-slate-950/85 backdrop-blur-md border border-orange-500/30 text-[9px] sm:text-[10px] font-mono text-orange-400 font-bold uppercase tracking-wider shadow-md">
+          <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-950/85 backdrop-blur-md border border-orange-500/30 text-xs font-mono text-orange-400 font-bold uppercase tracking-wider shadow-md">
             {{ service.badge }}
           </div>
 
           <!-- Bottom Icon Badge -->
-          <div class="absolute bottom-2 right-2 w-8 h-8 sm:w-10 sm:h-10 bg-slate-950/90 backdrop-blur-md rounded-xl border border-white/15 flex items-center justify-center text-base sm:text-xl shadow-lg transform group-hover:scale-110 group-hover:border-orange-500/40 transition-all duration-500">
+          <div class="absolute bottom-3 right-3 w-11 h-11 bg-slate-950/90 backdrop-blur-md rounded-xl border border-white/15 flex items-center justify-center text-xl shadow-lg transform group-hover:scale-110 group-hover:border-orange-500/40 transition-all duration-500">
             {{ service.icon }}
           </div>
         </div>
 
         <!-- Service Content -->
-        <div class="p-3 sm:p-5 flex-1 flex flex-col justify-between space-y-2 sm:space-y-3">
+        <div class="p-5 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
           <div>
-            <h3 class="text-sm sm:text-lg font-bold text-white mb-1.5 tracking-wide font-display group-hover:text-orange-400 transition-colors duration-300 line-clamp-1">
+            <h3 class="text-lg sm:text-xl font-bold text-white mb-2 tracking-wide font-display group-hover:text-orange-400 transition-colors duration-300">
               {{ service.title }}
             </h3>
             
-            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed group-hover:text-slate-200 transition-colors duration-300 font-normal line-clamp-2 sm:line-clamp-3">
+            <p class="text-slate-300 text-sm leading-relaxed group-hover:text-slate-200 transition-colors duration-300 font-normal">
               {{ service.desc }}
             </p>
           </div>
 
           <div>
-            <div class="flex flex-wrap gap-1 pt-2 border-t border-white/10">
-              <span *ngFor="let tag of service.tags" class="text-[10px] sm:text-[11px] bg-slate-900 border border-white/10 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md text-slate-300 font-medium group-hover:border-orange-500/30 group-hover:text-orange-300 transition-colors duration-300">
+            <div class="flex flex-wrap gap-1.5 pt-3 border-t border-white/10">
+              <span *ngFor="let tag of service.tags" class="text-xs bg-slate-900 border border-white/10 px-3 py-1 rounded-lg text-slate-300 font-medium group-hover:border-orange-500/30 group-hover:text-orange-300 transition-colors duration-300">
                 {{ tag }}
               </span>
             </div>
 
-            <a href="#contact" class="mt-3 flex items-center text-xs font-bold text-orange-400 group-hover:text-orange-300 group-hover:translate-x-1 transition-all duration-300">
+            <a href="#contact" class="mt-4 inline-flex items-center text-xs font-bold text-orange-400 group-hover:text-orange-300 group-hover:translate-x-1 transition-all duration-300">
               <span>Start This Solution</span>
               <span class="ml-1.5">→</span>
             </a>
