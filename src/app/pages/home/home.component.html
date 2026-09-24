@@ -165,7 +165,7 @@
       <div class="p-3.5 sm:p-5 rounded-2xl bg-slate-950/70 backdrop-blur-md border border-orange-500/25 relative overflow-hidden shadow-lg group hover:border-orange-500/40 transition-all duration-300">
         <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-orange-500 to-amber-400"></div>
         <p class="text-slate-300 leading-relaxed text-xs sm:text-base md:text-lg font-normal pl-2">
-          Led by <strong class="text-white font-semibold">Murad Mahmood (CEO)</strong> and <strong class="text-white font-semibold">Ibtisam Ali (Technical Advisor &amp; AI Engineer)</strong>, Tamsal Technologies delivers robust solutions for international clients. We specialize in complex logic and modern technical architecture.
+          Led by <strong class="text-white font-semibold">Murad Mahmood (CEO)</strong>, Tamsal Technologies delivers robust solutions for international clients. We specialize in complex logic and modern technical architecture.
         </p>
       </div>
 
@@ -593,28 +593,28 @@
       Connect with Tamsal Technologies today and let's turn your technical vision into a secure, scalable digital reality.
     </p>
     
-    <div class="grid md:grid-cols-2 gap-6 text-left pt-2">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 text-left pt-2 max-w-4xl mx-auto w-full">
       <!-- Email Card -->
       <a [href]="'mailto:' + email" 
-         class="p-6 rounded-2xl glass-card border border-white/10 flex items-center gap-5 hover:border-orange-500/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-        <div class="w-14 h-14 rounded-2xl bg-orange-500/10 text-orange-400 text-2xl flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-orange-500 group-hover:to-amber-500 group-hover:text-white transition-all duration-300 shadow-inner border border-orange-500/20 shrink-0">
+         class="p-4 sm:p-6 rounded-2xl glass-card border border-white/10 flex items-center gap-3.5 sm:gap-5 hover:border-orange-500/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+        <div class="w-11 h-11 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-orange-500/10 text-orange-400 text-xl sm:text-2xl flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-orange-500 group-hover:to-amber-500 group-hover:text-white transition-all duration-300 shadow-inner border border-orange-500/20 shrink-0">
           ✉
         </div>
-        <div>
-          <p class="text-orange-400 font-bold text-xs uppercase tracking-wider mb-0.5 font-mono">Email Us</p>
-          <span class="text-base text-white font-semibold group-hover:text-orange-300 transition-colors break-all">{{ email }}</span>
+        <div class="min-w-0 flex-1">
+          <p class="text-orange-400 font-bold text-[10px] sm:text-xs uppercase tracking-wider mb-0.5 font-mono">Email Us</p>
+          <span class="text-xs sm:text-sm md:text-base text-white font-semibold group-hover:text-orange-300 transition-colors whitespace-nowrap block truncate">{{ email }}</span>
         </div>
       </a>
       
       <!-- Phone Card -->
       <a [href]="'tel:' + phone" 
-         class="p-6 rounded-2xl glass-card border border-white/10 flex items-center gap-5 hover:border-orange-500/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-        <div class="w-14 h-14 rounded-2xl bg-orange-500/10 text-orange-400 text-2xl flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-orange-500 group-hover:to-amber-500 group-hover:text-white transition-all duration-300 shadow-inner border border-orange-500/20 shrink-0">
+         class="p-4 sm:p-6 rounded-2xl glass-card border border-white/10 flex items-center gap-3.5 sm:gap-5 hover:border-orange-500/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+        <div class="w-11 h-11 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-orange-500/10 text-orange-400 text-xl sm:text-2xl flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-orange-500 group-hover:to-amber-500 group-hover:text-white transition-all duration-300 shadow-inner border border-orange-500/20 shrink-0">
           📞
         </div>
-        <div>
-          <p class="text-orange-400 font-bold text-xs uppercase tracking-wider mb-0.5 font-mono">Call / WhatsApp</p>
-          <span class="text-base text-white font-semibold group-hover:text-orange-300 transition-colors">{{ phone }}</span>
+        <div class="min-w-0 flex-1">
+          <p class="text-orange-400 font-bold text-[10px] sm:text-xs uppercase tracking-wider mb-0.5 font-mono">Call / WhatsApp</p>
+          <span class="text-xs sm:text-sm md:text-base text-white font-semibold group-hover:text-orange-300 transition-colors whitespace-nowrap block">{{ phone }}</span>
         </div>
       </a>
     </div>
