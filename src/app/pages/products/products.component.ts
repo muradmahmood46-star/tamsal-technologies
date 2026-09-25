@@ -3,6 +3,18 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { QuoteModalService } from '../../services/quote-modal.service';
 
+export interface ProductPlan {
+  title: string;
+  icon: string;
+  pricePkr: string;
+  priceUsd: string;
+  timeline: string;
+  desc: string;
+  popular: boolean;
+  tier: string;
+  features: string[];
+}
+
 @Component({
   selector: 'app-products',
   standalone: true,
@@ -14,19 +26,27 @@ export class ProductsComponent {
   phone = '+92 334 8128646';
   whatsapp = '923348128646';
 
+  // Currency Toggle state
+  currency: 'PKR' | 'USD' = 'PKR';
+
   constructor(public quoteService: QuoteModalService) {}
+
+  setCurrency(curr: 'PKR' | 'USD') {
+    this.currency = curr;
+  }
 
   openQuote(productTitle?: string) {
     this.quoteService.open(productTitle || 'Business Website', productTitle);
   }
 
-  // Products & Pricing Data List
-  products = [
+  // 5 Complete Products & Pricing Cards Data List
+  products: ProductPlan[] = [
     {
       title: 'Business Website',
       icon: '🌐',
-      price: 'Rs. 20,000 – 60,000+',
-      timeline: '3–7 days',
+      pricePkr: 'Rs. 20,000 – 60,000+',
+      priceUsd: '$70 – $250+',
+      timeline: '1–3 weeks',
       desc: 'Professional business websites with WhatsApp integration, Google Maps, contact forms, and optional online ordering.',
       popular: false,
       tier: 'Starter to Pro',
@@ -41,8 +61,9 @@ export class ProductsComponent {
     {
       title: 'Point of Sale (POS)',
       icon: '🧾',
-      price: 'Rs. 50,000 – 100,000',
-      timeline: '1–3 weeks',
+      pricePkr: 'Rs. 50,000 – 100,000',
+      priceUsd: '$180 – $360',
+      timeline: '3–6 weeks',
       desc: 'Complete billing and inventory management system for retail, restaurants, and pharmacies.',
       popular: true,
       tier: 'Most Popular',
@@ -55,9 +76,44 @@ export class ProductsComponent {
       ]
     },
     {
+      title: 'Custom Shopify Store',
+      icon: '🛍️',
+      pricePkr: 'Rs. 20,000 – 40,000',
+      priceUsd: '$70 – $150',
+      timeline: '1–2 weeks',
+      desc: 'Fully customized Shopify store setup with theme design, product listings, payment gateway, and store optimization — ready to start selling fast.',
+      popular: false,
+      tier: 'E-Commerce Ready',
+      features: [
+        'Custom Shopify Theme Setup & Branding',
+        'Product Upload & Category Structuring',
+        'Payment Gateway & Shipping Configuration',
+        'Mobile-Optimized Storefront',
+        'Basic SEO & Store Speed Optimization'
+      ]
+    },
+    {
+      title: 'Paid-to-Click (PTC) Platform',
+      icon: '💰',
+      pricePkr: 'Rs. 20,000 – 50,000',
+      priceUsd: '$70 – $180',
+      timeline: '3–5 weeks',
+      desc: 'Earning platform where users complete tasks, view ads, or click links to earn rewards — with dashboard, referral system, and payout tracking.',
+      popular: false,
+      tier: 'New Launch',
+      features: [
+        'User Dashboard & Task/Ad System',
+        'Wallet, Earnings & Payout Tracking',
+        'Referral & Commission System',
+        'Admin Panel for User & Payment Management',
+        'Secure Login & Fraud Prevention Basics'
+      ]
+    },
+    {
       title: 'Enterprise ERP',
       icon: '🏢',
-      price: 'Rs. 100,000 – 150,000+',
+      pricePkr: 'Rs. 100,000 – 150,000+',
+      priceUsd: '$300 – $550+',
       timeline: '3–6 weeks',
       desc: 'Complete business management platform covering sales, inventory, accounts, HR, and reporting for growing enterprises.',
       popular: false,
