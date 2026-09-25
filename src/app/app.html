@@ -46,9 +46,11 @@
         Team
         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-amber-400 transition-all duration-300 group-hover:w-full"></span>
       </a>
-      <a routerLink="/" fragment="contact" class="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider hover:from-orange-600 hover:to-amber-600 transition-all duration-300 shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40 hover:scale-105 active:scale-95">
-        Contact Us
-      </a>
+      <button type="button" 
+              (click)="quoteService.open()" 
+              class="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider hover:from-orange-600 hover:to-amber-600 transition-all duration-300 shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40 hover:scale-105 active:scale-95 cursor-pointer">
+        Get a Quote
+      </button>
     </div>
 
     <!-- Mobile Hamburger Toggle -->
@@ -71,7 +73,11 @@
     <a (click)="closeMobileMenu()" routerLink="/" fragment="services" class="block text-base font-semibold text-slate-200 hover:text-orange-400 py-1">Expertise &amp; Roadmap</a>
     <a (click)="closeMobileMenu()" routerLink="/products" class="block text-base font-semibold text-slate-200 hover:text-orange-400 py-1">Products &amp; Pricing</a>
     <a (click)="closeMobileMenu()" routerLink="/" fragment="team" class="block text-base font-semibold text-slate-200 hover:text-orange-400 py-1">Our Team</a>
-    <a (click)="closeMobileMenu()" routerLink="/" fragment="contact" class="block text-center bg-gradient-to-r from-orange-500 to-amber-500 text-white py-3 rounded-xl font-bold shadow-md">Contact Us</a>
+    <button type="button" 
+            (click)="closeMobileMenu(); quoteService.open()" 
+            class="w-full block text-center bg-gradient-to-r from-orange-500 to-amber-500 text-white py-3 rounded-xl font-bold shadow-md cursor-pointer">
+      Get a Quote
+    </button>
   </div>
 </nav>
 
@@ -133,3 +139,6 @@
     </div>
   </div>
 </footer>
+
+<!-- Global Get a Quote Modal -->
+<app-quote-modal></app-quote-modal>

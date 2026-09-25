@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { QuoteModalService } from '../../services/quote-modal.service';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,12 @@ export class HomeComponent {
   companyName = 'TAMSAL TECHNOLOGIES';
   email = 'tamsaltechnologies@gmail.com';
   phone = '+92 334 8128646';
+
+  constructor(public quoteService: QuoteModalService) {}
+
+  openQuote(projectType?: string, projectName?: string) {
+    this.quoteService.open(projectType, projectName);
+  }
 
   // Sliding Patti (Marquee) Keywords
   marqueeItems = [

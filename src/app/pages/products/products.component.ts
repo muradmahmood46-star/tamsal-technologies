@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { QuoteModalService } from '../../services/quote-modal.service';
 
 @Component({
   selector: 'app-products',
@@ -12,6 +13,12 @@ export class ProductsComponent {
   email = 'tamsaltechnologies@gmail.com';
   phone = '+92 334 8128646';
   whatsapp = '923348128646';
+
+  constructor(public quoteService: QuoteModalService) {}
+
+  openQuote(productTitle?: string) {
+    this.quoteService.open(productTitle || 'Business Website', productTitle);
+  }
 
   // Products & Pricing Data List
   products = [

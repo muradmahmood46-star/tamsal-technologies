@@ -115,13 +115,14 @@
 
         <!-- Bottom CTA Button -->
         <div class="relative z-10 pt-4">
-          <a routerLink="/" fragment="contact" 
-             [ngClass]="prod.popular ? 
-               'bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white shadow-lg shadow-orange-500/25' : 
-               'bg-slate-800/80 hover:bg-orange-500 border border-white/10 hover:border-orange-500 text-slate-200 hover:text-white hover:shadow-lg hover:shadow-orange-500/20'"
-             class="w-full py-3.5 px-6 rounded-xl font-bold text-center block transition-all duration-300 hover:scale-[1.02] active:scale-95 text-sm uppercase tracking-wider font-display">
+          <button type="button"
+                  (click)="openQuote(prod.title)" 
+                  [ngClass]="prod.popular ? 
+                    'bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white shadow-lg shadow-orange-500/25' : 
+                    'bg-slate-800/80 hover:bg-orange-500 border border-white/10 hover:border-orange-500 text-slate-200 hover:text-white hover:shadow-lg hover:shadow-orange-500/20'"
+                  class="w-full py-3.5 px-6 rounded-xl font-bold text-center block transition-all duration-300 hover:scale-[1.02] active:scale-95 text-sm uppercase tracking-wider font-display cursor-pointer">
             Get a Quote
-          </a>
+          </button>
         </div>
 
         <!-- Bottom Accent Line -->
@@ -144,9 +145,11 @@
           We build custom workflows, bespoke integrations, and tailored business platforms. Talk to our technical leadership team for a fast, obligation-free consultation.
         </p>
         <div class="pt-2 flex flex-wrap justify-center gap-4">
-          <a [href]="'tel:' + phone" class="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-7 py-3.5 rounded-xl text-xs font-bold transition-all duration-300 shadow-lg shadow-orange-500/25 font-display uppercase tracking-wider">
-            Call Now: {{ phone }}
-          </a>
+          <button type="button"
+                  (click)="openQuote('Bespoke Enterprise Software')" 
+                  class="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-7 py-3.5 rounded-xl text-xs font-bold transition-all duration-300 shadow-lg shadow-orange-500/25 font-display uppercase tracking-wider cursor-pointer">
+            Request Custom Quote
+          </button>
           <a [href]="'https://wa.me/' + whatsapp" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-white/10 px-7 py-3.5 rounded-xl text-xs font-bold transition-all duration-300 font-display uppercase tracking-wider flex items-center gap-2">
             <span>💬</span> WhatsApp Us
           </a>

@@ -39,10 +39,12 @@
 
       <!-- CTA Buttons: 1 Single Line on Both Mobile & PC -->
       <div class="flex flex-row items-center gap-3 sm:gap-4 justify-start pt-2">
-        <a href="#contact" class="group bg-gradient-to-r from-orange-500 via-orange-500 to-amber-500 text-white px-5 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-xs sm:text-sm tracking-wide hover:from-orange-600 hover:to-amber-600 transition-all duration-300 shadow-xl shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-0.5 active:scale-95 flex items-center justify-center gap-2 whitespace-nowrap">
-          <span>Start Project</span>
+        <button type="button" 
+                (click)="openQuote('Custom Software Development')" 
+                class="group bg-gradient-to-r from-orange-500 via-orange-500 to-amber-500 text-white px-5 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-xs sm:text-sm tracking-wide hover:from-orange-600 hover:to-amber-600 transition-all duration-300 shadow-xl shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-0.5 active:scale-95 flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer">
+          <span>Request a Quote</span>
           <span class="transform group-hover:translate-x-1 transition-transform">→</span>
-        </a>
+        </button>
         <a href="#work" class="glass-card hover:bg-white/10 text-white px-5 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-xs sm:text-sm tracking-wide transition-all duration-300 hover:border-white/25 hover:-translate-y-0.5 active:scale-95 flex items-center justify-center gap-2 whitespace-nowrap">
           <span>View Our Work</span>
           <span class="text-slate-400 group-hover:text-white">↗</span>
@@ -320,13 +322,20 @@
 
           <!-- Bottom Action Button -->
           <div class="pt-3 md:pt-4 border-t border-white/10 flex items-center justify-between">
-            <a [href]="proj.link" 
-               [target]="proj.isExternal ? '_blank' : '_self'" 
-               [rel]="proj.isExternal ? 'noopener noreferrer' : ''"
+            <button *ngIf="!proj.isExternal"
+                    type="button"
+                    (click)="openQuote(proj.tags[0] || 'Custom Software', proj.title)" 
+                    class="inline-flex items-center gap-2 text-xs font-bold px-3.5 py-2 md:px-4 md:py-2.5 rounded-xl bg-orange-500/10 border border-orange-500/30 text-orange-400 hover:bg-orange-500 hover:text-white hover:border-transparent transition-all duration-300 group/btn shadow-sm cursor-pointer">
+              <span>{{ proj.buttonText }}</span>
+              <span class="transform group-hover/btn:translate-x-0.5 transition-transform">→</span>
+            </button>
+            <a *ngIf="proj.isExternal"
+               [href]="proj.link" 
+               target="_blank" 
+               rel="noopener noreferrer"
                class="inline-flex items-center gap-2 text-xs font-bold px-3.5 py-2 md:px-4 md:py-2.5 rounded-xl bg-orange-500/10 border border-orange-500/30 text-orange-400 hover:bg-orange-500 hover:text-white hover:border-transparent transition-all duration-300 group/btn shadow-sm">
               <span>{{ proj.buttonText }}</span>
-              <span class="transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" *ngIf="proj.isExternal">↗</span>
-              <span class="transform group-hover/btn:translate-x-0.5 transition-transform" *ngIf="!proj.isExternal">→</span>
+              <span class="transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform">↗</span>
             </a>
           </div>
         </div>
