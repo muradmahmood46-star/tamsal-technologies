@@ -198,49 +198,53 @@
         <!-- Image Container: Compact h-[320px] on mobile, h-[500px] on PC -->
         <div class="relative w-full h-[320px] sm:h-[420px] lg:h-[500px] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-950 border border-white/10">
           <img src="/about-lab.webp" 
-               alt="Tamsal Technologies AI & Software Architecture Laboratory" 
+               alt="Tamsal Technologies Software Engineering & Client Collaboration Studio" 
                loading="lazy"
                class="w-full h-full object-cover object-center transform group-hover:scale-108 transition-transform duration-1000 ease-out">
           
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-transparent to-slate-950/20 pointer-events-none"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent pointer-events-none"></div>
 
-          <!-- Top Floating Lab Status Pill -->
-          <div class="absolute top-2.5 sm:top-4 left-2.5 sm:left-4 z-20 flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl bg-slate-950/85 backdrop-blur-md border border-orange-500/30 shadow-lg text-[10px] sm:text-xs font-mono text-white animate-float-slow">
+          <!-- Top Floating Status Pill -->
+          <div class="absolute top-2.5 sm:top-4 left-2.5 sm:left-4 z-20 flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl bg-slate-950/80 backdrop-blur-md border border-orange-500/30 shadow-lg text-[10px] sm:text-xs font-mono text-white animate-float-slow">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-            <span class="font-bold text-orange-400">R&amp;D INNOVATION LAB</span>
+            <span class="font-bold text-orange-400">ENGINEERING &amp; CLIENT SUCCESS</span>
           </div>
 
           <!-- Top-Right Pure Text Animated Projects Stat (No background box) -->
           <div class="absolute top-2.5 sm:top-4 right-3 sm:right-5 z-20 text-right pointer-events-none">
-            <div class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 font-display tracking-tight leading-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+            <div class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 font-display tracking-tight leading-none drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
               {{ projectCount }}+
             </div>
-            <div class="text-[11px] sm:text-xs md:text-sm font-bold uppercase tracking-wider text-white font-display mt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+            <div class="text-[11px] sm:text-xs md:text-sm font-bold uppercase tracking-wider text-white font-display mt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
               Projects Delivered
             </div>
           </div>
 
-          <!-- Bottom Floating Stats Grid: 2 Clean Badges with ZERO overlap -->
-          <div class="absolute bottom-2.5 sm:bottom-4 left-2.5 sm:left-4 right-2.5 sm:right-4 z-20 grid grid-cols-2 gap-2 sm:gap-3.5">
-            <!-- Stat Badge 1: Experience -->
-            <div class="p-2 sm:p-3.5 rounded-xl bg-slate-950/90 backdrop-blur-md border border-white/15 shadow-xl text-white flex items-center gap-2 sm:gap-3">
-              <div class="text-xl sm:text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400 font-display shrink-0">
+          <!-- Bottom Pure Text Stats Row (Zero background box, clean floating text) -->
+          <div class="absolute bottom-3 sm:bottom-5 left-3.5 sm:left-6 right-3.5 sm:right-6 z-20 flex items-end justify-between pointer-events-none">
+            <!-- Stat 1: 5+ Experience -->
+            <div class="text-left">
+              <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 font-display tracking-tight leading-none drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
                 {{ experienceCount }}+
               </div>
-              <div class="text-left overflow-hidden min-w-0">
-                <div class="text-[11px] sm:text-xs md:text-sm font-bold truncate">Experience</div>
-                <div class="text-[9px] sm:text-[10px] md:text-xs text-slate-300 truncate">Production Systems</div>
+              <div class="text-[11px] sm:text-xs md:text-sm font-bold uppercase tracking-wider text-white font-display mt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+                Experience
+              </div>
+              <div class="text-[9px] sm:text-[10px] md:text-xs text-slate-300 font-mono drop-shadow-[0_2px_6px_rgba(0,0,0,0.95)]">
+                Production Systems
               </div>
             </div>
 
-            <!-- Stat Badge 2: Reliability -->
-            <div class="p-2 sm:p-3.5 rounded-xl bg-slate-950/90 backdrop-blur-md border border-white/15 shadow-xl text-white flex items-center gap-2 sm:gap-3">
-              <div class="text-xl sm:text-2xl md:text-3xl font-black text-emerald-400 font-mono shrink-0">
+            <!-- Stat 2: 100% Reliability -->
+            <div class="text-right">
+              <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-emerald-400 font-mono tracking-tight leading-none drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
                 {{ reliabilityCount }}%
               </div>
-              <div class="text-left overflow-hidden min-w-0">
-                <div class="text-[11px] sm:text-xs md:text-sm font-bold truncate">Reliability</div>
-                <div class="text-[9px] sm:text-[10px] md:text-xs text-slate-300 truncate">24/7 Monitored</div>
+              <div class="text-[11px] sm:text-xs md:text-sm font-bold uppercase tracking-wider text-white font-display mt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+                Reliability
+              </div>
+              <div class="text-[9px] sm:text-[10px] md:text-xs text-slate-300 font-mono drop-shadow-[0_2px_6px_rgba(0,0,0,0.95)]">
+                24/7 Monitored
               </div>
             </div>
           </div>
