@@ -65,8 +65,8 @@ export class ProductsComponent {
       priceUsd: '$180 – $360',
       timeline: '3–6 weeks',
       desc: 'Complete billing and inventory management system for retail, restaurants, and pharmacies.',
-      popular: true,
-      tier: 'Most Popular',
+      popular: false,
+      tier: 'Retail & Pharmacy',
       features: [
         'Billing & Barcode Scanning',
         'Inventory & Purchase Management',

@@ -71,27 +71,17 @@
     <!-- 5 Pricing Cards Responsive Grid: 3 in Row 1 + 2 Centered in Row 2 on Desktop -->
     <div class="flex flex-wrap justify-center items-stretch gap-6 md:gap-8 pt-4 w-full">
       <div *ngFor="let prod of products" 
-           class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-md relative rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-500 group overflow-hidden"
-           [ngClass]="prod.popular ? 
-             'bg-gradient-to-b from-slate-900 to-slate-950 text-white border-2 border-orange-500 shadow-[0_20px_50px_rgba(249,115,22,0.25)] lg:-translate-y-2 hover:-translate-y-3 hover:shadow-[0_25px_60px_rgba(249,115,22,0.35)]' : 
-             'bg-slate-900/70 backdrop-blur-md text-white border border-white/10 hover:border-orange-500/40 hover:shadow-[0_20px_40px_rgba(249,115,22,0.12)] hover:-translate-y-1.5 shadow-sm'">
+           class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-md relative rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-500 group overflow-hidden bg-gradient-to-b from-slate-900 to-slate-950 text-white border border-white/10 hover:border-orange-500/50 shadow-[0_15px_40px_rgba(0,0,0,0.5)] hover:shadow-[0_25px_60px_rgba(249,115,22,0.25)] hover:-translate-y-2">
         
-        <!-- Most Popular Badge -->
-        <div *ngIf="prod.popular" class="absolute -top-px left-1/2 -translate-x-1/2 z-20">
-          <span class="bg-gradient-to-r from-orange-500 to-amber-500 text-white text-[11px] font-black uppercase tracking-wider px-4 py-1.5 rounded-b-xl shadow-md shadow-orange-500/30 inline-flex items-center gap-1.5 font-display">
-            ★ Most Popular
-          </span>
-        </div>
-
-        <!-- Hover Glow -->
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(249,115,22,0.15),transparent_65%)] transition-opacity duration-500 pointer-events-none"></div>
+        <!-- Yellow / Amber Circular Ambient Glow on All Cards -->
+        <div class="absolute -top-12 -right-12 w-48 h-48 bg-amber-400/20 rounded-full blur-2xl pointer-events-none group-hover:bg-amber-400/35 transition-all duration-500"></div>
+        <div class="absolute inset-0 opacity-40 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(251,191,36,0.18),transparent_65%)] transition-opacity duration-500 pointer-events-none"></div>
 
         <!-- Card Body -->
         <div class="relative z-10 space-y-4 sm:space-y-5">
           <!-- Icon & Timeline Row -->
           <div class="flex items-center justify-between pt-1">
-            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center text-2xl sm:text-3xl shadow-inner group-hover:scale-110 transition-transform duration-500"
-                 [ngClass]="prod.popular ? 'bg-slate-950/90 border border-white/10' : 'bg-slate-800/80 border border-white/10 text-orange-400'">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center text-2xl sm:text-3xl shadow-inner group-hover:scale-110 transition-transform duration-500 bg-slate-950/90 border border-white/10 text-orange-400">
               {{ prod.icon }}
             </div>
             <span class="text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1.5 font-mono text-orange-400 bg-orange-500/10 border border-orange-500/20">
@@ -131,18 +121,15 @@
           </div>
 
           <!-- Description -->
-          <p class="text-xs sm:text-sm leading-relaxed min-h-[3.75rem] transition-colors duration-300 font-normal"
-             [ngClass]="prod.popular ? 'text-slate-300 group-hover:text-slate-200' : 'text-slate-400 group-hover:text-slate-300'">
+          <p class="text-xs sm:text-sm leading-relaxed min-h-[3.75rem] transition-colors duration-300 font-normal text-slate-300 group-hover:text-slate-200">
             {{ prod.desc }}
           </p>
 
-          <div class="w-full h-px my-3"
-               [ngClass]="prod.popular ? 'bg-white/10' : 'bg-white/5'"></div>
+          <div class="w-full h-px my-3 bg-white/10"></div>
 
           <!-- Feature List -->
           <ul class="space-y-2.5 pb-4">
-            <li *ngFor="let feat of prod.features" class="flex items-start gap-2.5 text-xs sm:text-sm"
-                [ngClass]="prod.popular ? 'text-slate-200' : 'text-slate-300'">
+            <li *ngFor="let feat of prod.features" class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
               <span class="w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center text-[10px] sm:text-xs font-bold shrink-0 mt-0.5 bg-orange-500/10 border border-orange-500/25 text-orange-400">
                 ✓
               </span>
@@ -155,10 +142,7 @@
         <div class="relative z-10 pt-4">
           <button type="button"
                   (click)="openQuote(prod.title)" 
-                  [ngClass]="prod.popular ? 
-                    'bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white shadow-lg shadow-orange-500/25' : 
-                    'bg-slate-800/80 hover:bg-orange-500 border border-white/10 hover:border-orange-500 text-slate-200 hover:text-white hover:shadow-lg hover:shadow-orange-500/20'"
-                  class="w-full py-3.5 px-6 rounded-xl font-bold text-center block transition-all duration-300 hover:scale-[1.02] active:scale-95 text-xs sm:text-sm uppercase tracking-wider font-display cursor-pointer">
+                  class="w-full py-3.5 px-6 rounded-xl font-bold text-center block transition-all duration-300 hover:scale-[1.02] active:scale-95 text-xs sm:text-sm uppercase tracking-wider font-display bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white shadow-lg shadow-orange-500/25 cursor-pointer">
             Get a Quote
           </button>
         </div>
