@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { QuoteModalService } from '../../services/quote-modal.service';
@@ -9,12 +9,78 @@ import { QuoteModalService } from '../../services/quote-modal.service';
   imports: [CommonModule, RouterLink],
   templateUrl: './home.component.html'
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit, OnDestroy {
   companyName = 'TAMSAL TECHNOLOGIES';
   email = 'tamsaltechnologies@gmail.com';
   phone = '+92 334 8128646';
 
+  // Animated Counters on About Lab Image
+  projectCount = 0;
+  experienceCount = 0;
+  reliabilityCount = 0;
+  private hasAnimatedCounters = false;
+  private observer?: IntersectionObserver;
+
+  @ViewChild('aboutLabFrame') aboutLabFrame?: ElementRef;
+
   constructor(public quoteService: QuoteModalService) {}
+
+  ngAfterViewInit() {
+    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
+      this.observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !this.hasAnimatedCounters) {
+              this.hasAnimatedCounters = true;
+              this.startCounterAnimation();
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+
+      if (this.aboutLabFrame?.nativeElement) {
+        this.observer.observe(this.aboutLabFrame.nativeElement);
+      } else {
+        const el = document.getElementById('about');
+        if (el) this.observer.observe(el);
+      }
+    } else {
+      this.projectCount = 10;
+      this.experienceCount = 5;
+      this.reliabilityCount = 100;
+    }
+  }
+
+  startCounterAnimation() {
+    const duration = 1600;
+    const startTime = performance.now();
+
+    const animate = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic function for ultra-smooth deceleration
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+
+      this.projectCount = Math.floor(easeOut * 10);
+      this.experienceCount = Math.floor(easeOut * 5);
+      this.reliabilityCount = Math.floor(easeOut * 100);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        this.projectCount = 10;
+        this.experienceCount = 5;
+        this.reliabilityCount = 100;
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }
+
+  ngOnDestroy() {
+    this.observer?.disconnect();
+  }
 
   openQuote(projectType?: string, projectName?: string) {
     this.quoteService.open(projectType, projectName);
