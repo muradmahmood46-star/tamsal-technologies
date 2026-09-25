@@ -39,8 +39,8 @@ export class ProductsComponent {
     this.quoteService.open(productTitle || 'Business Website', productTitle);
   }
 
-  // 5 Complete Products & Pricing Cards Data List
-  products: ProductPlan[] = [
+  // Group 1: 3 Core Software & Business Solutions (Top Section)
+  coreProducts: ProductPlan[] = [
     {
       title: 'Business Website',
       icon: '🌐',
@@ -76,6 +76,27 @@ export class ProductsComponent {
       ]
     },
     {
+      title: 'Enterprise ERP',
+      icon: '🏢',
+      pricePkr: 'Rs. 100,000 – 150,000+',
+      priceUsd: '$300 – $550+',
+      timeline: '3–6 weeks',
+      desc: 'Complete business management platform covering sales, inventory, accounts, HR, and reporting for growing enterprises.',
+      popular: false,
+      tier: 'Enterprise Suite',
+      features: [
+        'Sales, Purchases & Inventory',
+        'Accounts & Financial Reports',
+        'Employee & HR Management',
+        'Customer & Supplier Management',
+        'Fully Customizable Architecture'
+      ]
+    }
+  ];
+
+  // Group 2: 2 Specialized E-Commerce & Earning Platforms (Bottom Section - Fast 1–2 Weeks)
+  specializedProducts: ProductPlan[] = [
+    {
       title: 'Custom Shopify Store',
       icon: '🛍️',
       pricePkr: 'Rs. 20,000 – 40,000',
@@ -97,7 +118,7 @@ export class ProductsComponent {
       icon: '💰',
       pricePkr: 'Rs. 20,000 – 50,000',
       priceUsd: '$70 – $180',
-      timeline: '3–5 weeks',
+      timeline: '1–2 weeks',
       desc: 'Earning platform where users complete tasks, view ads, or click links to earn rewards — with dashboard, referral system, and payout tracking.',
       popular: false,
       tier: 'New Launch',
@@ -107,23 +128,6 @@ export class ProductsComponent {
         'Referral & Commission System',
         'Admin Panel for User & Payment Management',
         'Secure Login & Fraud Prevention Basics'
-      ]
-    },
-    {
-      title: 'Enterprise ERP',
-      icon: '🏢',
-      pricePkr: 'Rs. 100,000 – 150,000+',
-      priceUsd: '$300 – $550+',
-      timeline: '3–6 weeks',
-      desc: 'Complete business management platform covering sales, inventory, accounts, HR, and reporting for growing enterprises.',
-      popular: false,
-      tier: 'Enterprise Suite',
-      features: [
-        'Sales, Purchases & Inventory',
-        'Accounts & Financial Reports',
-        'Employee & HR Management',
-        'Customer & Supplier Management',
-        'Fully Customizable Architecture'
       ]
     }
   ];
