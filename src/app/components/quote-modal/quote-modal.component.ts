@@ -31,14 +31,24 @@ export class QuoteModalComponent implements OnInit, OnDestroy {
   // Project Types List
   projectTypes = [
     'Custom Website Development',
-    'POS (Point of Sale) & Barcode Billing',
-    'Custom ERP & Enterprise Automation',
-    'Mobile App Development (iOS / Android)',
+    'Custom Shopify Store & E-Commerce',
+    'Multi-Vendor E-Commerce Marketplace',
+    'Point of Sale (POS) & Barcode Billing',
+    'Retail & Pharmacy POS System',
+    'Restaurant POS & Online Ordering System',
+    'Custom Enterprise ERP System',
+    'Mobile App Development (iOS & Android)',
+    'Paid-to-Click (PTC) & Earning Platform',
+    'Trading & Financial Management System',
     'AI & Machine Learning Automation',
-    'Multi-Vendor E-Commerce Platform',
-    'Cloud Architecture & DevOps',
-    'Trading & Financial System',
-    'Other / Bespoke Custom Software'
+    'AI Chatbots & Intelligent Video Engines',
+    'REST API & Backend Microservices Architecture',
+    'Enterprise Cloud Hosting & DevOps CI/CD',
+    'Database Architecture, Optimization & Migration',
+    'UI/UX Design, Branding & Prototype Modeling',
+    'Website Redesign, Speed Optimization & Bug Fixes',
+    'Monthly Software Maintenance & 24/7 Technical Support',
+    'Other / Bespoke Custom Software Solution'
   ];
 
   // Company Contact Destinations
