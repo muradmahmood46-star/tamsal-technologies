@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnDestroy, ElementRef, ViewChild } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy, ElementRef, ViewChild, ChangeDetectorRef, NgZone } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { QuoteModalService } from '../../services/quote-modal.service';
@@ -18,68 +18,94 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   projectCount = 0;
   experienceCount = 0;
   reliabilityCount = 0;
-  private hasAnimatedCounters = false;
+  private isAnimating = false;
   private observer?: IntersectionObserver;
+  private animationFrameId?: number;
 
   @ViewChild('aboutLabFrame') aboutLabFrame?: ElementRef;
 
-  constructor(public quoteService: QuoteModalService) {}
+  constructor(
+    public quoteService: QuoteModalService,
+    private cdr: ChangeDetectorRef,
+    private ngZone: NgZone
+  ) {}
 
   ngAfterViewInit() {
     if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
       this.observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
-            if (entry.isIntersecting && !this.hasAnimatedCounters) {
-              this.hasAnimatedCounters = true;
+            if (entry.isIntersecting && !this.isAnimating) {
               this.startCounterAnimation();
             }
           });
         },
-        { threshold: 0.15 }
+        { threshold: 0.2, rootMargin: '0px 0px -40px 0px' }
       );
 
-      if (this.aboutLabFrame?.nativeElement) {
-        this.observer.observe(this.aboutLabFrame.nativeElement);
-      } else {
-        const el = document.getElementById('about');
-        if (el) this.observer.observe(el);
-      }
+      setTimeout(() => {
+        if (this.aboutLabFrame?.nativeElement) {
+          this.observer?.observe(this.aboutLabFrame.nativeElement);
+        } else {
+          const el = document.getElementById('about');
+          if (el) this.observer?.observe(el);
+        }
+      }, 100);
     } else {
       this.projectCount = 10;
       this.experienceCount = 5;
       this.reliabilityCount = 100;
+      this.cdr.detectChanges();
     }
   }
 
   startCounterAnimation() {
-    const duration = 1600;
+    this.isAnimating = true;
+    this.projectCount = 0;
+    this.experienceCount = 0;
+    this.reliabilityCount = 0;
+    this.cdr.detectChanges();
+
+    const duration = 2000; // 2 seconds visible counting
     const startTime = performance.now();
 
-    const animate = (currentTime: number) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      // Ease out cubic function for ultra-smooth deceleration
-      const easeOut = 1 - Math.pow(1 - progress, 3);
+    this.ngZone.runOutsideAngular(() => {
+      const step = (currentTime: number) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease-out cubic curve for natural smooth slowdown at the end
+        const easeOut = 1 - Math.pow(1 - progress, 3);
 
-      this.projectCount = Math.floor(easeOut * 10);
-      this.experienceCount = Math.floor(easeOut * 5);
-      this.reliabilityCount = Math.floor(easeOut * 100);
+        this.projectCount = Math.min(10, Math.floor(easeOut * 10.99));
+        this.experienceCount = Math.min(5, Math.floor(easeOut * 5.99));
+        this.reliabilityCount = Math.min(100, Math.floor(easeOut * 100));
 
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      } else {
-        this.projectCount = 10;
-        this.experienceCount = 5;
-        this.reliabilityCount = 100;
-      }
-    };
+        this.ngZone.run(() => {
+          this.cdr.detectChanges();
+        });
 
-    requestAnimationFrame(animate);
+        if (progress < 1) {
+          this.animationFrameId = requestAnimationFrame(step);
+        } else {
+          this.projectCount = 10;
+          this.experienceCount = 5;
+          this.reliabilityCount = 100;
+          this.isAnimating = false;
+          this.ngZone.run(() => {
+            this.cdr.detectChanges();
+          });
+        }
+      };
+
+      this.animationFrameId = requestAnimationFrame(step);
+    });
   }
 
   ngOnDestroy() {
     this.observer?.disconnect();
+    if (this.animationFrameId) {
+      cancelAnimationFrame(this.animationFrameId);
+    }
   }
 
   openQuote(projectType?: string, projectName?: string) {
