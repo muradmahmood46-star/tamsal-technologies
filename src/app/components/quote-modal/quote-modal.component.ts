@@ -112,7 +112,7 @@ export class QuoteModalComponent implements OnInit, OnDestroy {
 
     this.isSubmitting = true;
 
-    // 1. Prepare WhatsApp Message
+    // 1. Prepare WhatsApp Formatted Message
     const fullName = `${this.firstName.trim()} ${this.lastName.trim()}`.trim();
     const waText = 
 `*🚀 New Project Quote Request - Tamsal Technologies*
@@ -130,22 +130,30 @@ Sent via Tamsal Technologies Web Portal`;
     const encodedWa = encodeURIComponent(waText);
     const waUrl = `https://wa.me/${this.companyWhatsAppNumber}?text=${encodedWa}`;
 
-    // 2. Open WhatsApp in a new tab
+    // 2. Automatically launch WhatsApp immediately in the user interaction event
     if (typeof window !== 'undefined') {
-      window.open(waUrl, '_blank');
+      try {
+        const link = document.createElement('a');
+        link.href = waUrl;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } catch {
+        window.open(waUrl, '_blank');
+      }
     }
 
-    // 3. Send Email via FormSubmit AJAX to company email
+    // 3. Automatically dispatch Email to company inbox in background
     try {
       const emailPayload = {
-        'First Name': this.firstName.trim(),
-        'Last Name': this.lastName.trim(),
-        'Full Name': fullName,
-        'Contact Number': this.contactNumber.trim(),
+        'Client Name': fullName,
+        'Phone / WhatsApp': this.contactNumber.trim(),
         'Client Email': this.email.trim(),
-        'Project Type': this.projectType,
+        'Project Category': this.projectType,
         'Project Requirements': this.projectDetails.trim(),
-        '_subject': `New Project Quote Request: ${fullName} (${this.projectType})`,
+        '_subject': `🚀 New Project Quote: ${fullName} - ${this.projectType}`,
         '_template': 'table',
         '_captcha': 'false'
       };
@@ -163,8 +171,7 @@ Sent via Tamsal Technologies Web Portal`;
       this.isSuccess = true;
       this.resetForm();
     } catch (err) {
-      console.warn('Email dispatch warning, WhatsApp opened:', err);
-      // Even if background email fetch has network latency or warning, WhatsApp is opened and client succeeded
+      console.warn('Background email dispatch status:', err);
       this.isSubmitting = false;
       this.isSuccess = true;
       this.resetForm();
